@@ -14,6 +14,21 @@ This APB design includes:
 - Transfer only occurs when `PTRANSFER = 1`
 
 ---
+##   Architecture
+
+![image](https://github.com/user-attachments/assets/7e951609-4f54-4533-bb4c-b1e42127b2cd)
+
+## APB Interface Block Diagram
+
+![image](https://github.com/user-attachments/assets/f3f4f351-8680-4ed1-b5cf-29483982ebd9)
+
+## Operation Of APB
+![image](https://github.com/user-attachments/assets/3d263d62-642d-48dd-ba70-5c2646565172)
+
+## APB Master-Slave Block Diagram
+
+![image](https://github.com/user-attachments/assets/b451f0e2-2202-4aaa-9f1f-919160b446b7)
+
 
 ## 🔁 APB Signal Summary
 
