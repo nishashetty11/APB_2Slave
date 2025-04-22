@@ -6,9 +6,7 @@
 // Copyright    : 2024(c) Manipal Center of Excellence. All rights reserved.
 //----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------------
-// APB_IP_MONITOR PSEUDOCODE:
-//-----------------------------------------------------------------------------------
+
 // ApbIpMonitor is a user-defined class which is extended from uvm_monitor 
 // which is a pre-defined UVM class. It monitors signals from the DUT IP side.
 
@@ -39,11 +37,11 @@ endfunction : new
 function void ApbIpMonitor::build_phase(uvm_phase phase);
   super.build_phase(phase);
 
-  // Step 1: Create a new transaction object using factory
+  // Create a new transaction object using factory
   // This object will be used to store monitored signal values
   ip_mon_h = ApbSeqItem::type_id::create("ip_mon_h");
 
-  // Step 2: Get the virtual interface from the configuration database
+  // Get the virtual interface from the configuration database
   // The testbench top or environment must have set this interface earlier
   // If it fails to get the interface, it throws a fatal error
   if (!uvm_config_db#(virtual ApbIntf)::get(this, "", "vif", vif))
