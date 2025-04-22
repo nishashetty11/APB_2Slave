@@ -13,18 +13,6 @@
 //a predefined UVM base class for sequence items used in sequences
 class ApbSeqItem extends uvm_sequence_item
 
-//Factory registration for enabling creation via UVM factory
-`uvm_object_utils_begin(ApbSeqItem)
-  //Registering all class variables for automation and reporting
-  `uvm_field_int(apb_write_paddr, UVM_DEFAULT)
-  `uvm_field_int(apb_read_paddr, UVM_DEFAULT)
-  `uvm_field_int(apb_write_data, UVM_DEFAULT)
-  `uvm_field_int(transfer, UVM_DEFAULT)
-  `uvm_field_int(READ_WRITE, UVM_DEFAULT)
-  `uvm_field_int(apb_read_data_out, UVM_DEFAULT)
-`uvm_object_utils_end
-
-//Class properties:
 //Randomizable APB transfer signals
 rand bit [`AW - 1:0] apb_write_paddr;   // Write address
 rand bit [`AW - 1:0] apb_read_paddr;    // Read address
