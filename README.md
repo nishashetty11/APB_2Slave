@@ -11,7 +11,7 @@ This APB design includes:
 
 - One **APB master** controlled via external signals
 - Two **APB slaves** selected using the 9th bit of `PADDR`
-- Transfer only occurs when `PTRANSFER = 1`
+- Transfer only occurs when `TRANSFER = 1`
 
 ---
 ##   Architecture
