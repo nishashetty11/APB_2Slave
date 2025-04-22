@@ -32,17 +32,17 @@ class ApbOpMonitor extends uvm_monitor;
   //--------------------------------------------------------------------------------
   // Function: Build phase
   // This phase initializes necessary components like transaction object and interface.
-  // 1. Create a new transaction object (op_mon_h) to hold monitored signal values.
-  // 2. Retrieve the virtual interface (vif) from the UVM config database.
+  // Create a new transaction object (op_mon_h) to hold monitored signal values.
+  //  Retrieve the virtual interface (vif) from the UVM config database.
   // If retrieval fails, a fatal error is raised.
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 
-    // Step 1: Create a new transaction object using the factory
+    // Create a new transaction object using the factory
     // This object will hold the monitored signal values for APB operations
     op_mon_h = ApbSeqItem::type_id::create("op_mon_h");
 
-    // Step 2: Retrieve the virtual interface from the UVM config database
+    // Retrieve the virtual interface from the UVM config database
     // The top-level environment should have set the virtual interface before.
     // If it cannot be retrieved, a fatal error is thrown.
     if (!uvm_config_db#(virtual ApbIntf)::get(this, "", "vif", vif))
