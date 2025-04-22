@@ -44,7 +44,7 @@ This APB design includes:
 | `PENABLE`  | 1-bit  | APB Bridge     | Indicates 2nd phase of data transfer.                                       |
 | `PREADY`   | 1-bit  | Slave          | Slave ready for transfer completion.                                        |
 | `PSLVERR`  | 1-bit  | Slave          | Indicates error on transfer.                                                |
-| `PTRANSFER`| 1-bit  | System Bus     | High = Enable APB operation.                                                |
+| `TRANSFER`| 1-bit  | System Bus     | High = Enable APB operation.                                                |
 
 ---
 
