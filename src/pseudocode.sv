@@ -251,8 +251,8 @@ ApbSeqItem txn
 // calls the drive task to send signals to DUT, and completes the item.
 task run_phase(uvm_phase phase)
   forever begin
-    wait(vif.presetn) // Wait until reset is released
-    seq_item_port.get_next_item(txn) // Get transaction from sequence
+    wait() // Wait until reset is released
+    seq_item_port.get_next_item() // Get transaction from sequence
     drive() // Call drive task to apply txn to interface
     seq_item_port.item_done() // Notify UVM that item is done
   end
