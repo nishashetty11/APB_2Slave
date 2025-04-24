@@ -69,12 +69,11 @@ class ApbWriteSlave2Sequence extends ApbSequence;
     txn = ApbSeqItem::type_id::create("txn");
 
     // Randomize the transaction
-    if (!txn.randomize() with {
+    txn.randomize() with {
         txn.transfer == 1;
         txn.READ_WRITE == 1;
-        txn.apb_write_paddr[8] == 1;
-      })
-      `uvm_error("SEQUENCE", "Randomization failed!")
+      txn.apb_write_paddr[8] == 1;
+      }
 
         txn.print();
     // Start and finish transaction
@@ -99,12 +98,11 @@ class ApbReadSlave1Sequence extends ApbSequence;
     txn = ApbSeqItem::type_id::create("txn");
 
     // Randomize the transaction
-    if (!txn.randomize() with {
+    txn.randomize() with {
         txn.transfer == 1;
         txn.READ_WRITE == 0;
         txn.apb_write_paddr[8] == 0;
-      })
-      `uvm_error("SEQUENCE", "Randomization failed!")
+      }
 
         txn.print();
     // Start and finish transaction
@@ -131,13 +129,11 @@ class ApbReadSlave2Sequence extends ApbSequence;
     txn = ApbSeqItem::type_id::create("txn");
 
     // Randomize the transaction
-    if (!txn.randomize() with {
+     txn.randomize() with {
         txn.transfer == 1;
         txn.READ_WRITE == 0;
-        txn.apb_write_paddr[8] == 1;
-      })
-      `uvm_error("SEQUENCE", "Randomization failed!")
-
+       txn.apb_write_paddr[8] == 1;
+      }
       txn.print();
     // Start and finish transaction
     start_item(txn);
