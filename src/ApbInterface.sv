@@ -1,7 +1,5 @@
-interface ApbInterface(input bit pclk, input bit presetn)
+interface ApbInterface(input bit pclk, input bit presetn);
 
-  logic transfer;                     
-  logic READ_WRITE;                     
   logic [8:0] apb_read_paddr;       
   logic [8:0] apb_write_paddr;    
   logic [7:0] apb_write_data;

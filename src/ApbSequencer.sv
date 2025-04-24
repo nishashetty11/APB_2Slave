@@ -12,7 +12,7 @@
 // a pre-defined UVM class for managing APB sequence items
 
 
-class ApbSequencer extends uvm_sequencer #(ApbSeqItem;
+class ApbSequencer extends uvm_sequencer #(ApbSeqItem);
 // Factory registration
 `uvm_component_utils(ApbSequencer)
 // Constructor

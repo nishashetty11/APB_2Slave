@@ -11,18 +11,7 @@
 //-----------------------------------------------------------------------------------
 //ApbSeqItem is a user-defined class which is extended from uvm_sequence_item,
 //a predefined UVM base class for sequence items used in sequences
-class ApbSeqItem extends uvm_sequence_item
-
-//Factory registration for enabling creation via UVM factory
-`uvm_object_utils_begin(ApbSeqItem)
-  //Registering all class variables for automation and reporting
-  `uvm_field_int(apb_write_paddr, UVM_DEFAULT)
-  `uvm_field_int(apb_read_paddr, UVM_DEFAULT)
-  `uvm_field_int(apb_write_data, UVM_DEFAULT)
-  `uvm_field_int(transfer, UVM_DEFAULT)
-  `uvm_field_int(READ_WRITE, UVM_DEFAULT)
-  `uvm_field_int(apb_read_data_out, UVM_DEFAULT)
-`uvm_object_utils_end
+class ApbSeqItem extends uvm_sequence_item;
 
 //Class properties:
 //Randomizable APB transfer signals
@@ -34,6 +23,17 @@ rand bit READ_WRITE;                   // 0 = write, 1 = read
 
 //Non-random output signal (read data from DUT)
 bit [`DW - 1:0] apb_read_data_out;     // Output data from read operation
+//Factory registration for enabling creation via UVM factory
+`uvm_object_utils_begin(ApbSeqItem)
+  //Registering all class variables for automation and reporting
+  `uvm_field_int(apb_write_paddr, UVM_DEFAULT)
+  `uvm_field_int(apb_read_paddr, UVM_DEFAULT)
+  `uvm_field_int(apb_write_data, UVM_DEFAULT)
+  `uvm_field_int(transfer, UVM_DEFAULT)
+  `uvm_field_int(READ_WRITE, UVM_DEFAULT)
+  `uvm_field_int(apb_read_data_out, UVM_DEFAULT)
+`uvm_object_utils_end
+
 
 //Constructor to initialize the object
 function new(string name = "ApbSeqItem");
