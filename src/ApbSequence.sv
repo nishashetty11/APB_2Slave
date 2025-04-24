@@ -2,7 +2,6 @@
 
 class ApbSequence extends uvm_sequence #(ApbSeqItem);
 
-  // Factory registration for enabling object creation using type_id::create
   `uvm_object_utils(ApbSequence)
 
   // Handle for the transaction item of type ApbSeqItem
@@ -41,17 +40,14 @@ class ApbWriteSlave1Sequence extends ApbSequence;
     txn = ApbSeqItem::type_id::create("txn");
 
     // Randomize the transaction
-    if (!txn.randomize() with {
+    if (!(txn.randomize() with {
         txn.transfer == 1;
         txn.READ_WRITE == 1;
         txn.apb_write_paddr[8] == 0;
-      })
+      }))
       `uvm_error("SEQUENCE", "Randomization failed!")
 
-    `uvm_info("SEQUENCE", $sformatf("[%0t] transfer = %b, READ_WRITE = %b, apb_write_paddr = %h, apb_write_data = %h", 
-                $time, txn.transfer, txn.READ_WRITE, txn.apb_write_paddr, txn.apb_write_data), UVM_LOW)
-
-    // Start and finish transaction
+    txn.print();
     start_item(txn);
     finish_item(txn);
   endtask
@@ -80,9 +76,7 @@ class ApbWriteSlave2Sequence extends ApbSequence;
       })
       `uvm_error("SEQUENCE", "Randomization failed!")
 
-    `uvm_info("SEQUENCE", $sformatf("[%0t] transfer = %b, READ_WRITE = %b, apb_write_paddr = %h, apb_write_data = %h", 
-                $time, txn.transfer, txn.READ_WRITE, txn.apb_write_paddr, txn.apb_write_data), UVM_LOW)
-
+        txn.print();
     // Start and finish transaction
     start_item(txn);
     finish_item(txn);
@@ -112,9 +106,7 @@ class ApbReadSlave1Sequence extends ApbSequence;
       })
       `uvm_error("SEQUENCE", "Randomization failed!")
 
-    `uvm_info("SEQUENCE", $sformatf("[%0t] transfer = %b, READ_WRITE = %b, apb_write_paddr = %h, apb_write_data = %h apb_read_paddr =%h apb_read_data_out =%h ", 
-                $time, txn.transfer, txn.READ_WRITE, txn.apb_write_paddr, txn.apb_write_data,txn.apb_read_paddr,txn.apb_read_data_out), UVM_LOW)
-
+        txn.print();
     // Start and finish transaction
     start_item(txn);
     finish_item(txn);
@@ -146,9 +138,7 @@ class ApbReadSlave2Sequence extends ApbSequence;
       })
       `uvm_error("SEQUENCE", "Randomization failed!")
 
-    `uvm_info("SEQUENCE", $sformatf("[%0t] transfer = %b, READ_WRITE = %b, apb_write_paddr = %h, apb_write_data = %h apb_read_paddr =%h apb_read_data_out =%h ", 
-                $time, txn.transfer, txn.READ_WRITE, txn.apb_write_paddr, txn.apb_write_data,txn.apb_read_paddr,txn.apb_read_data_out), UVM_LOW)
-
+      txn.print();
     // Start and finish transaction
     start_item(txn);
     finish_item(txn);

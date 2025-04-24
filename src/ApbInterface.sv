@@ -14,6 +14,7 @@ interface ApbInterface(input bit pclk, input bit presetn);
     output apb_read_paddr;
     output apb_write_paddr;
     output  apb_write_data;
+   input presetn;
   endclocking
 
   clocking mon_cb @(posedge pclk or negedge presetn);

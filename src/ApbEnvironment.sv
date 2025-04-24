@@ -1,11 +1,3 @@
-//------------------------------------------------------------------------------
-// Project      : APB
-// File Name    : ApbEnvironment.sv
-// Developers   : Nisha Shetty
-//------------------------------------------------------------------------------
-// Copyright    : 2024(c) Manipal Center of Excellence. All rights reserved.
-//------------------------------------------------------------------------------
-
 class ApbEnvironment extends uvm_env;
 
   
@@ -25,7 +17,6 @@ class ApbEnvironment extends uvm_env;
   
 virtual function void build_phase(uvm_phase phase);
   super.build_phase(phase);
-
   act_h  = ApbActiveAgent::type_id::create("act_h", this);
   pass_h = ApbPassiveAgent::type_id::create("pass_h", this);
   scb_h  = ApbScoreboard::type_id::create("scb_h", this);
@@ -35,7 +26,6 @@ endfunction : build_phase
 
   virtual function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);  
-    
     act_h.ip_mon_h.item_collected_port.connect(scb_h.in_mon_port);
      pass_h.op_mon_h.item_collected_port.connect(scb_h.out_mon_port);
      act_h.ip_mon_h.item_collected_port.connect(cov_h.ip_mon_imp);

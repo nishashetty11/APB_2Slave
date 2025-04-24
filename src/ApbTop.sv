@@ -9,9 +9,10 @@ module top;
      #20;
      presetn=1;
     end
- ApbIntf intf(pclk,presetn);
+ ApbInterface intf(pclk,presetn);
 initial begin
-       uvm_config_db #(virtual ApbInterface)::set(uvm_root::get(),"*","vif",intf);
+      
+     uvm_config_db #(virtual ApbInterface)::set(null,"*","vif",intf);
      end
 initial begin
   run_test("ApbWriteSlave1Test");

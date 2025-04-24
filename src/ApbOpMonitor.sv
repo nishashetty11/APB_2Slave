@@ -28,7 +28,7 @@ class ApbOpMonitor extends uvm_monitor;
   virtual task run_phase(uvm_phase phase);
      forever 
        begin
-         @(vif.mon_cb);
+         @(vif.mon_cb) begin
            op_mon_h.transfer <= vif.transfer;
            op_mon_h.READ_WRITE <=vif.READ_WRITE;
            op_mon_h.apb_write_paddr <= vif.apb_write_paddr;
@@ -36,9 +36,11 @@ class ApbOpMonitor extends uvm_monitor;
            op_mon_h.apb_read_paddr <= vif.apb_read_paddr;
            op_mon_h.apb_read_data_out <= vif.apb_read_data_out;
           item_collected_port.write(op_mon_h);
-          `uvm_info("OUTPUT MONITOR",$sformatf("[%0t] transfer =%b , READ_WRITE =%b, apb_write_paddr =%h , apb_write_data =%h , apb_read_paddr =%h, apb_read_data=%h ,apb_read_data_out =%h",$time,vif.transfer, vif.READ_WRITE, vif.apb_write_paddr, vif.apb_write_data, vif.apb_read_paddr, vif.apb_read_data_out),UVM_LOW)
+          `uvm_info("OUTPUT MONITOR",$sformatf("[%0t] transfer =%b , READ_WRITE =%b, apb_write_paddr =%h , apb_write_data =%h , apb_read_paddr =%h, apb_read_data=%0h",$time, vif.transfer, vif.READ_WRITE, vif.apb_write_paddr, vif.apb_write_data, vif.apb_read_paddr, vif.apb_read_data_out),UVM_LOW)
       $display("-------------------------------------------------------------------------------------------------------------------------------");
+ 
    end
+end
            
   endtask
 
