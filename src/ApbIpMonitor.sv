@@ -1,59 +1,41 @@
-//------------------------------------------------------------------------------
-// Project      : APB
-// File Name    : ApbIpMonitor.sv
-// Developers   :Nisha Shetty
-//------------------------------------------------------------------------------
-// Copyright    : 2024(c) Manipal Center of Excellence. All rights reserved.
-//----------------------------------------------------------------------------
+class ApbIpMonitor extends uvm_monitor;
 
-
-// ApbIpMonitor is a user-defined class which is extended from uvm_monitor 
-// which is a pre-defined UVM class. It monitors signals from the DUT IP side.
-
-class ApbIpMonitor extends uvm_monitor
-
-  // Factory registration
   `uvm_component_utils(ApbIpMonitor)
-
-  // Handle to virtual interface
-  virtual ApbIntf vif;
-
-  // Declaring a handle of ApbSeqItem to hold transaction data
+  virtual ApbInterface vif;
   ApbSeqItem ip_mon_h;
-
-  // Analysis port to send collected transactions to scoreboard
+  
   uvm_analysis_port#(ApbSeqItem) item_collected_port;
-
-  //--------------------------------------------------------------------------------
-// Function: Class constructor
-function ApbIpMonitor::new(string name = "ApbIpMonitor", uvm_component parent = null);
+ function new (string name="apb_ip_mon", uvm_component parent);
   super.new(name, parent);
-  // Create analysis port to send collected transactions
+
   item_collected_port = new("item_collected_port", this);
 endfunction : new
 
-//--------------------------------------------------------------------------------
-// Function: Build phase
-function void ApbIpMonitor::build_phase(uvm_phase phase);
+function void build_phase(uvm_phase phase);
   super.build_phase(phase);
-
-  // Create a new transaction object using factory
-  // This object will be used to store monitored signal values
   ip_mon_h = ApbSeqItem::type_id::create("ip_mon_h");
 
-  // Get the virtual interface from the configuration database
-  // The testbench top or environment must have set this interface earlier
-  // If it fails to get the interface, it throws a fatal error
-  if (!uvm_config_db#(virtual ApbIntf)::get(this, "", "vif", vif))
+  if (!uvm_config_db#(virtual ApbInterface)::get(this, "", "vif", vif))
     `uvm_fatal("NOVIF", {"virtual interface must be set for: ", get_full_name(), ".vif"});
 endfunction : build_phase
 
-//--------------------------------------------------------------------------------
-// Task: Run phase
-task ApbIpMonitor::run_phase(uvm_phase phase);
-  
+
+virtual task run_phase(uvm_phase phase);
+  forever begin
+    @(vif.mon_cb);
+      ip_mon_h.transfer = vif.transfer;
+      ip_mon_h.READ_WRITE =vif.READ_WRITE;
+      ip_mon_h.apb_write_data = vif.apb_write_data;
+      ip_mon_h.apb_write_paddr = vif.apb_write_paddr;
+      ip_mon_h.apb_read_paddr = vif.apb_read_paddr;
+      item_collected_port.write(ip_mon_h);
+    `uvm_info("INPUT MONITOR", $sformatf("[%0t] transfer = %b, READ_WRITE = %b, apb_write_data = %h, apb_write_paddr = %h, apb_read_paddr = %h",
+    $time, ip_mon_h.transfer, ip_mon_h.READ_WRITE, ip_mon_h.apb_write_data, ip_mon_h.apb_write_paddr, ip_mon_h.apb_read_paddr), UVM_LOW);
+
+ $display("---------------------------------------------------------------------------------------------------------------------"); 
+    end
+        
 endtask : run_phase
   
 
 endclass: ApbIpMonitor
-
