@@ -23,24 +23,23 @@ class ApbEnvironment extends uvm_env;
   endfunction
 
   
-  virtual function void build_phase(uvm_phase phase);
-    super.build_phase(phase); 
-  
-    act_h = ApbActiveAgent::type_id::create("act_h", this);
-  
-    pass_h = ApbPassiveAgent::type_id::create("pass_h", this);
-    scb_h = ApbScoreboard::type_id::create("scb_h", this);
-    cov_h = ApbCoverage::type_id::create("cov_h", this);
-  endfunction : build_phase
+virtual function void build_phase(uvm_phase phase);
+  super.build_phase(phase);
+
+  act_h  = ApbActiveAgent::type_id::create("act_h", this);
+  pass_h = ApbPassiveAgent::type_id::create("pass_h", this);
+  scb_h  = ApbScoreboard::type_id::create("scb_h", this);
+  cov_h  = ApbCoverage::type_id::create("cov_h", this);
+endfunction : build_phase
 
 
   virtual function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);  
     
-    act_h.mon.item_collected_port.connect(scb_h.in_mon_port);
-     pass_h.mon.item_collected_port.connect(scb_h.out_mon_port);
-     act_h.mon.item_collected_port.connect(cov_h.ip_mon_imp);
-     pass_h.mon.item_collected_port.connect(cov_h.op_mon_imp);
+    act_h.ip_mon_h.item_collected_port.connect(scb_h.in_mon_port);
+     pass_h.op_mon_h.item_collected_port.connect(scb_h.out_mon_port);
+     act_h.ip_mon_h.item_collected_port.connect(cov_h.ip_mon_imp);
+     pass_h.op_mon_h.item_collected_port.connect(cov_h.op_mon_imp);
   endfunction : connect_phase
 
 endclass: ApbEnvironment

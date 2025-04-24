@@ -13,7 +13,7 @@ import uvm_pkg::*;
 `include "ApbActiveAgent.sv"
 `include "ApbPassiveAgent.sv"
 `include "ApbScoreboard.sv"
-//`include "apb_coverage.sv"
+`include "ApbCoverage.sv"
 `include "ApbEnvironment.sv"
 `include "ApbTest.sv"
 

@@ -69,7 +69,7 @@ task run_phase(uvm_phase phase);
                    end      
                else
                   begin
-                    exp_trans.apb_read_out =  ApbMem[exp_trans.apb_read_paddr]
+                    exp_trans.apb_read_data_out =  ApbMem[exp_trans.apb_read_paddr];
                   end
               end
        compare(exp_trans,act_trans);
@@ -95,12 +95,12 @@ task run_phase(uvm_phase phase);
       begin
              if((exp_trans.apb_read_data_out == act_trans.apb_read_data_out) && (exp_trans.apb_read_paddr == act_trans.apb_read_paddr))
           begin
-            `uvm_info("compare", $sformatf("-------------Test: PASS------------\n Expected apb_read_data = %0h Actual apb_w_data = %0h  expected apb_write_paddr =%0h actual apb_write_apddr = %0h ", exp_trans.apb_write_data, act_trans.apb_write_data, exp_trans.apb_write_paddr, act_trans.apb_write_paddr), UVM_LOW);
+            `uvm_info("compare", $sformatf("-------------Test: PASS------------\n Expected apb_read_data = %0h Actual apb_read_data = %0h  expected apb_read_paddr =%0h actual apb_read_paddr = %0h ", exp_trans.apb_read_data_out, act_trans.apb_read_data_out, exp_trans.apb_read_paddr, act_trans.apb_read_paddr), UVM_LOW)
              pass++;
           end
         else
           begin
-            `uvm_info("compare", $sformatf("-------------Test: FAIL------------\n Expected apb_write_data = %0h Actual apb_write_data = %0h  expected apb_write_paddr =%0h actual apb_write_apddr = %0h ", exp_trans.apb_write_data, act_trans.apb_write_data, exp_trans.apb_write_paddr, act_trans.apb_write_paddr), UVM_LOW);
+             `uvm_info("compare", $sformatf("-------------Test: PASS------------\n Expected apb_read_data = %0h Actual apb_read_data = %0h  expected apb_read_paddr =%0h actual apb_read_paddr = %0h ", exp_trans.apb_read_data_out, act_trans.apb_read_data_out, exp_trans.apb_read_paddr, act_trans.apb_read_paddr), UVM_LOW)
              fail++;
           end
       end
