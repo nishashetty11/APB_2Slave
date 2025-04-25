@@ -7,7 +7,7 @@ interface ApbInterface(input bit pclk, input bit presetn);
   logic transfer;      
   logic READ_WRITE;               
 
-  clocking drv_cb @(posedge pclk or negedge presetn);
+  clocking drv_cb @(posedge pclk );
     default input #1 output #1;
     output transfer;
     output  READ_WRITE;
@@ -17,7 +17,7 @@ interface ApbInterface(input bit pclk, input bit presetn);
    input presetn;
   endclocking
 
-  clocking mon_cb @(posedge pclk or negedge presetn);
+  clocking mon_cb @(posedge pclk );
     default input #1 output #1; 
     input transfer;
     input READ_WRITE;
