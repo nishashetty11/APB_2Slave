@@ -26,15 +26,16 @@ class ApbOpMonitor extends uvm_monitor;
   endfunction
 
   virtual task run_phase(uvm_phase phase);
-     forever 
+ @(vif.mon_cb)  
+  forever 
        begin
          @(vif.mon_cb) ;
-           op_mon_h.transfer <= vif.transfer;
-           op_mon_h.READ_WRITE <=vif.READ_WRITE;
-           op_mon_h.apb_write_paddr <= vif.apb_write_paddr;
-           op_mon_h.apb_write_data <= vif.apb_write_data;
-           op_mon_h.apb_read_paddr <= vif.apb_read_paddr;
-           op_mon_h.apb_read_data_out <= vif.apb_read_data_out;
+           op_mon_h.transfer= vif.transfer;
+           op_mon_h.READ_WRITE =vif.READ_WRITE;
+           op_mon_h.apb_write_paddr = vif.apb_write_paddr;
+           op_mon_h.apb_write_data = vif.apb_write_data;
+           op_mon_h.apb_read_paddr = vif.apb_read_paddr;
+           op_mon_h.apb_read_data_out = vif.apb_read_data_out;
           item_collected_port.write(op_mon_h);
    $display("----------------------------------------------OUTPUT MONITOR-------------------------------------------------------");
 

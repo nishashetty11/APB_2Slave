@@ -53,9 +53,9 @@ class ApbWriteSlave1Test extends uvm_test;
   task run_phase (uvm_phase phase);
     phase.raise_objection (this);
     seq_h = ApbWriteSlave1Sequence::type_id::create("seq_h");
-    repeat(5) begin
+   // repeat(5) begin
     seq_h.start(env_h.act_h.seqr_h); 
-   end
+  // end
    phase.drop_objection (this);
   endtask: run_phase
 

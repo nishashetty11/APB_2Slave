@@ -1,5 +1,5 @@
 # vsim -c top 
-# Start time: 13:10:55 on Apr 25,2025
+# Start time: 14:26:25 on Apr 25,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
@@ -111,24 +111,20 @@
 # --------------------------------------------
 # THE RESET IS 0
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(50) @ 5: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =0 , READ_WRITE = 0,  APB_WRITE_PADDR = 0, APB_READ_DATA_OUT =000, APB_READ_PADDR = 0 
-# ----------------------------------------------------------------------------------------------------
-# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbOpMonitor.sv(41) @ 5: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [5] transfer =x , READ_WRITE =x, apb_write_paddr =xxx , apb_write_data =xx , apb_read_paddr =xxx, apb_read_data=x
-# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbDriver.sv(54) @ 15: uvm_test_top.env_h.act_h.drv_h [DRIVER] [15] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 049, apb_write_data = 02e, apb_read_paddr = 144
+# UVM_INFO ApbDriver.sv(54) @ 15: uvm_test_top.env_h.act_h.drv_h [DRIVER] [15] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 052, apb_write_data = 0f3, apb_read_paddr = 1d3
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @768                                 
-#   apb_write_paddr              integral    9     'h49                                 
-#   apb_read_paddr               integral    9     'h144                                
-#   apb_write_data               integral    9     'h2e                                 
+# txn                            ApbSeqItem  -     @739                                 
+#   apb_write_paddr              integral    9     'h52                                 
+#   apb_read_paddr               integral    9     'h1d3                                
+#   apb_write_data               integral    9     'hf3                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    9     'h0                                  
 #   begin_time                   time        64    5                                    
+#   end_time                     time        64    5                                    
 #   depth                        int         32    'd2                                  
 #   parent sequence (name)       string      5     seq_h                                
 #   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
@@ -138,9 +134,9 @@
 # UVM_INFO ApbScoreboard.sv(50) @ 15: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =0 , READ_WRITE = 0,  APB_WRITE_PADDR = 0, APB_READ_DATA_OUT =000, APB_READ_PADDR = 0 
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbOpMonitor.sv(41) @ 15: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [15] transfer =0 , READ_WRITE =0, apb_write_paddr =000 , apb_write_data =00 , apb_read_paddr =000, apb_read_data=x
+# UVM_INFO ApbOpMonitor.sv(42) @ 15: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [15] transfer =0 , READ_WRITE =0, apb_write_paddr =000 , apb_write_data =00 , apb_read_paddr =000, apb_read_data=x
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(43) @ 15: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 1  TRANSFER =0 , READ_WRITE = 0, APB_WRITE_DATA = 0, APB_WRITE_PADDR = 0, APB_READ_PADDR = 0
+# UVM_INFO ApbScoreboard.sv(43) @ 15: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 2  TRANSFER =0 , READ_WRITE = 0, APB_WRITE_DATA = 0, APB_WRITE_PADDR = 0, APB_READ_PADDR = 0
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
@@ -156,144 +152,147 @@
 # --------------------------------------------
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbDriver.sv(54) @ 25: uvm_test_top.env_h.act_h.drv_h [DRIVER] [25] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 082, apb_write_data = 0b4, apb_read_paddr = 15b
+# UVM_INFO ApbDriver.sv(54) @ 25: uvm_test_top.env_h.act_h.drv_h [DRIVER] [25] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 063, apb_write_data = 08e, apb_read_paddr = 1fe
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @772                                 
-#   apb_write_paddr              integral    9     'h82                                 
-#   apb_read_paddr               integral    9     'h15b                                
-#   apb_write_data               integral    9     'hb4                                 
+# txn                            ApbSeqItem  -     @739                                 
+#   apb_write_paddr              integral    9     'h63                                 
+#   apb_read_paddr               integral    9     'h1fe                                
+#   apb_write_data               integral    9     'h8e                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    9     'h0                                  
 #   begin_time                   time        64    15                                   
+#   end_time                     time        64    15                                   
 #   depth                        int         32    'd2                                  
 #   parent sequence (name)       string      5     seq_h                                
 #   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(43) @ 25: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1, APB_WRITE_DATA = 2e, APB_WRITE_PADDR = 49, APB_READ_PADDR = 144
+# UVM_INFO ApbScoreboard.sv(43) @ 25: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 2  TRANSFER =1 , READ_WRITE = 1, APB_WRITE_DATA = f3, APB_WRITE_PADDR = 52, APB_READ_PADDR = 1d3
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h49 
-#   apb_read_paddr     integral    9     'h144
-#   apb_write_data     integral    9     'h2e 
+#   apb_write_paddr    integral    9     'h52 
+#   apb_read_paddr     integral    9     'h1d3
+#   apb_write_data     integral    9     'hf3 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
 #   apb_read_data_out  integral    9     'h0  
 # --------------------------------------------
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(50) @ 25: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =0 , READ_WRITE = 0,  APB_WRITE_PADDR = 0, APB_READ_DATA_OUT =000, APB_READ_PADDR = 0 
+# UVM_INFO ApbScoreboard.sv(50) @ 25: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1,  APB_WRITE_PADDR = 52, APB_READ_DATA_OUT =000, APB_READ_PADDR = 1d3 
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbOpMonitor.sv(41) @ 25: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [25] transfer =1 , READ_WRITE =1, apb_write_paddr =049 , apb_write_data =2e , apb_read_paddr =144, apb_read_data=x
+# UVM_INFO ApbOpMonitor.sv(42) @ 25: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [25] transfer =1 , READ_WRITE =1, apb_write_paddr =052 , apb_write_data =f3 , apb_read_paddr =1d3, apb_read_data=x
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(90) @ 25: uvm_test_top.env_h.scb_h [compare] -------------Test: FAIL------------
-#  EXPECTED apb_write_data = 2e ACTUAL apb_write_data = 0  EXPECTED apb_write_paddr =49 ACTUAL apb_write_apddr = 0 
-# UVM_INFO ApbDriver.sv(54) @ 35: uvm_test_top.env_h.act_h.drv_h [DRIVER] [35] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 0e6, apb_write_data = 01a, apb_read_paddr = 1ef
+# UVM_INFO ApbScoreboard.sv(85) @ 25: uvm_test_top.env_h.scb_h [compare] -------------Test: PASS------------
+#  EXPECTED apb_write_data = f3 ACTUAL apb_write_data = f3  EXPECTED apb_write_paddr =52 ACTUAL apb_write_apddr = 52 
+# UVM_INFO ApbDriver.sv(54) @ 35: uvm_test_top.env_h.act_h.drv_h [DRIVER] [35] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 067, apb_write_data = 075, apb_read_paddr = 045
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @776                                 
-#   apb_write_paddr              integral    9     'he6                                 
-#   apb_read_paddr               integral    9     'h1ef                                
-#   apb_write_data               integral    9     'h1a                                 
+# txn                            ApbSeqItem  -     @739                                 
+#   apb_write_paddr              integral    9     'h67                                 
+#   apb_read_paddr               integral    9     'h45                                 
+#   apb_write_data               integral    9     'h75                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    9     'h0                                  
 #   begin_time                   time        64    25                                   
+#   end_time                     time        64    25                                   
 #   depth                        int         32    'd2                                  
 #   parent sequence (name)       string      5     seq_h                                
 #   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(50) @ 35: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1,  APB_WRITE_PADDR = 49, APB_READ_DATA_OUT =000, APB_READ_PADDR = 144 
+# UVM_INFO ApbScoreboard.sv(50) @ 35: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1,  APB_WRITE_PADDR = 63, APB_READ_DATA_OUT =000, APB_READ_PADDR = 1fe 
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbOpMonitor.sv(41) @ 35: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [35] transfer =1 , READ_WRITE =1, apb_write_paddr =082 , apb_write_data =b4 , apb_read_paddr =15b, apb_read_data=x
+# UVM_INFO ApbOpMonitor.sv(42) @ 35: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [35] transfer =1 , READ_WRITE =1, apb_write_paddr =063 , apb_write_data =8e , apb_read_paddr =1fe, apb_read_data=x
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(43) @ 35: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1, APB_WRITE_DATA = b4, APB_WRITE_PADDR = 82, APB_READ_PADDR = 15b
+# UVM_INFO ApbScoreboard.sv(43) @ 35: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 2  TRANSFER =1 , READ_WRITE = 1, APB_WRITE_DATA = 8e, APB_WRITE_PADDR = 63, APB_READ_PADDR = 1fe
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h82 
-#   apb_read_paddr     integral    9     'h15b
-#   apb_write_data     integral    9     'hb4 
+#   apb_write_paddr    integral    9     'h63 
+#   apb_read_paddr     integral    9     'h1fe
+#   apb_write_data     integral    9     'h8e 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
 #   apb_read_data_out  integral    9     'h0  
 # --------------------------------------------
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(90) @ 35: uvm_test_top.env_h.scb_h [compare] -------------Test: FAIL------------
-#  EXPECTED apb_write_data = b4 ACTUAL apb_write_data = 2e  EXPECTED apb_write_paddr =82 ACTUAL apb_write_apddr = 49 
-# UVM_INFO ApbDriver.sv(54) @ 45: uvm_test_top.env_h.act_h.drv_h [DRIVER] [45] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 04e, apb_write_data = 093, apb_read_paddr = 0f0
+# UVM_INFO ApbScoreboard.sv(85) @ 35: uvm_test_top.env_h.scb_h [compare] -------------Test: PASS------------
+#  EXPECTED apb_write_data = 8e ACTUAL apb_write_data = 8e  EXPECTED apb_write_paddr =63 ACTUAL apb_write_apddr = 63 
+# UVM_INFO ApbDriver.sv(54) @ 45: uvm_test_top.env_h.act_h.drv_h [DRIVER] [45] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 041, apb_write_data = 013, apb_read_paddr = 01a
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @780                                 
-#   apb_write_paddr              integral    9     'h4e                                 
-#   apb_read_paddr               integral    9     'hf0                                 
-#   apb_write_data               integral    9     'h93                                 
+# txn                            ApbSeqItem  -     @739                                 
+#   apb_write_paddr              integral    9     'h41                                 
+#   apb_read_paddr               integral    9     'h1a                                 
+#   apb_write_data               integral    9     'h13                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    9     'h0                                  
 #   begin_time                   time        64    35                                   
+#   end_time                     time        64    35                                   
 #   depth                        int         32    'd2                                  
 #   parent sequence (name)       string      5     seq_h                                
 #   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(43) @ 45: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1, APB_WRITE_DATA = 1a, APB_WRITE_PADDR = e6, APB_READ_PADDR = 1ef
+# UVM_INFO ApbScoreboard.sv(43) @ 45: uvm_test_top.env_h.scb_h [SB] Got exp_trans: queue size = 2  TRANSFER =1 , READ_WRITE = 1, APB_WRITE_DATA = 75, APB_WRITE_PADDR = 67, APB_READ_PADDR = 45
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'he6 
-#   apb_read_paddr     integral    9     'h1ef
-#   apb_write_data     integral    9     'h1a 
+#   apb_write_paddr    integral    9     'h67 
+#   apb_read_paddr     integral    9     'h45 
+#   apb_write_data     integral    9     'h75 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
 #   apb_read_data_out  integral    9     'h0  
 # --------------------------------------------
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(50) @ 45: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1,  APB_WRITE_PADDR = 82, APB_READ_DATA_OUT =000, APB_READ_PADDR = 15b 
+# UVM_INFO ApbScoreboard.sv(50) @ 45: uvm_test_top.env_h.scb_h [SB] Got act_trans: queue size = 1  TRANSFER =1 , READ_WRITE = 1,  APB_WRITE_PADDR = 67, APB_READ_DATA_OUT =000, APB_READ_PADDR = 45 
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbOpMonitor.sv(41) @ 45: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [45] transfer =1 , READ_WRITE =1, apb_write_paddr =0e6 , apb_write_data =1a , apb_read_paddr =1ef, apb_read_data=x
+# UVM_INFO ApbOpMonitor.sv(42) @ 45: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [45] transfer =1 , READ_WRITE =1, apb_write_paddr =067 , apb_write_data =75 , apb_read_paddr =045, apb_read_data=x
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(90) @ 45: uvm_test_top.env_h.scb_h [compare] -------------Test: FAIL------------
-#  EXPECTED apb_write_data = 1a ACTUAL apb_write_data = b4  EXPECTED apb_write_paddr =e6 ACTUAL apb_write_apddr = 82 
+# UVM_INFO ApbScoreboard.sv(85) @ 45: uvm_test_top.env_h.scb_h [compare] -------------Test: PASS------------
+#  EXPECTED apb_write_data = 75 ACTUAL apb_write_data = 75  EXPECTED apb_write_paddr =67 ACTUAL apb_write_apddr = 67 
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 45: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # UVM_INFO ApbCoverage.sv(90) @ 45: uvm_test_top.env_h.cov_h [COVERAGE] 
 #  Input coverage is 92.857143 
 #  output coverage is 100.000000
-# UVM_INFO ApbScoreboard.sv(115) @ 45: uvm_test_top.env_h.scb_h [ApbScoreboard] ---------------------------------------
-# UVM_INFO ApbScoreboard.sv(116) @ 45: uvm_test_top.env_h.scb_h [ApbScoreboard] ----       TEST FAIL COUNTS  3     ----
-# UVM_INFO ApbScoreboard.sv(117) @ 45: uvm_test_top.env_h.scb_h [ApbScoreboard] ---------------------------------------
+# UVM_INFO ApbScoreboard.sv(121) @ 45: uvm_test_top.env_h.scb_h [ApbScoreboard] ---------------------------------------
+# UVM_INFO ApbScoreboard.sv(122) @ 45: uvm_test_top.env_h.scb_h [ApbScoreboard] ----       TEST PASS COUNTS  3     ----
+# UVM_INFO ApbScoreboard.sv(123) @ 45: uvm_test_top.env_h.scb_h [ApbScoreboard] ---------------------------------------
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   32
+# UVM_INFO :   30
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -301,14 +300,14 @@
 # [ApbScoreboard]     3
 # [COVERAGE]     1
 # [DRIVER]     5
-# [OUTPUT MONITOR]     5
+# [OUTPUT MONITOR]     4
 # [Questa UVM]     2
 # [RNTST]     1
-# [SB]    10
+# [SB]     9
 # [TEST_DONE]     1
 # [UVMTOP]     1
 # [compare]     3
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 45 ns  Iteration: 61  Instance: /top
-# End time: 13:11:19 on Apr 25,2025, Elapsed time: 0:00:24
+# End time: 14:26:29 on Apr 25,2025, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0

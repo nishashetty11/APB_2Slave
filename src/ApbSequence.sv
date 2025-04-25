@@ -38,6 +38,7 @@ class ApbWriteSlave1Sequence extends ApbSequence;
   virtual task body();
     // Create the transaction object
     txn = ApbSeqItem::type_id::create("txn");
+   repeat(5) begin
 if (!txn.randomize() with {
   txn.transfer == 1;
   txn.READ_WRITE == 1;
@@ -52,6 +53,7 @@ if (!txn.randomize() with {
      start_item(txn); 
 
     finish_item(txn);
+end
   endtask
 
 endclass
