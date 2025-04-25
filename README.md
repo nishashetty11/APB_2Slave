@@ -54,3 +54,17 @@ This APB design includes:
 [Apb Test Cases](https://docs.google.com/spreadsheets/d/1To9dF24lRDa2gGS8rfjhF0WfPLhh6V46s3G1ZIZL_Iw/edit?gid=0#gid=0)
 
 
+## How to Run
+
+### Compile the testbench
+ ```bash
+vlog <top_file.sv>
+```
+### Simulate and Run
+ ```bash
+vsim -c -do "run -all; exit;" <top_module name>
+```
+
+
+
+
