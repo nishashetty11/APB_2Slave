@@ -28,9 +28,10 @@ class ApbDriver extends uvm_driver#(ApbSeqItem);
   endtask: run_phase
 
 virtual task drive();
-   if (!vif.presetn)
+  @(vif.drv_cb)
+ if (!vif.presetn)
       begin
-        @(posedge vif.pclk);
+ //       @(vif.drv_cb);
         vif.transfer <='b0;
         vif.READ_WRITE <='b0;
         vif.apb_write_paddr <='b0;
@@ -39,16 +40,24 @@ virtual task drive();
      end
    else
      begin
-       @(vif.drv_cb) begin
+
+//       @(vif.drv_cb);
+
+ 
            vif.drv_cb.transfer <= txn.transfer;
            vif.drv_cb.READ_WRITE <= txn.READ_WRITE;
            vif.drv_cb.apb_write_paddr <= txn.apb_write_paddr;
            vif.drv_cb.apb_write_data <= txn.apb_write_data;
            vif.drv_cb.apb_read_paddr <= txn.apb_read_paddr;
-           txn.print();
- end
-     
-   end
+end 
+`uvm_info("DRIVER", $sformatf("[%0t] presetn = %b, transfer = %b, READ_WRITE = %b, apb_write_paddr = %h, apb_write_data = %h, apb_read_paddr = %h",
+                              $time, vif.presetn, txn.transfer, txn.READ_WRITE, txn.apb_write_paddr, txn.apb_write_data, txn.apb_read_paddr), UVM_LOW)
+      
+$display("---------------------------------DRIVER-------------------");
+          txn.print();
+        $display("--------------------------------------DRIVER----------------------------------");
+
+ 
 endtask
 
 

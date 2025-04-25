@@ -29,9 +29,10 @@ virtual task run_phase(uvm_phase phase);
       ip_mon_h.apb_write_paddr = vif.apb_write_paddr;
       ip_mon_h.apb_read_paddr = vif.apb_read_paddr;
       item_collected_port.write(ip_mon_h);
-   /* `uvm_info("INPUT MONITOR", $sformatf("[%0t] transfer = %b, READ_WRITE = %b, apb_write_data = %h, apb_write_paddr = %h, apb_read_paddr = %h",
-    $time, ip_mon_h.transfer, ip_mon_h.READ_WRITE, ip_mon_h.apb_write_data, ip_mon_h.apb_write_paddr, ip_mon_h.apb_read_paddr), UVM_LOW);*/
-   ip_mon_h.print();
+   $display("----------------------------------------------INPUT MONITOR-------------------------------------------------------");
+    ip_mon_h.print();
+    $display("THE RESET IS %0b",vif.presetn);
+   $display("----------------------------------------------INPUT MONITOR-------------------------------------------------------");
    end
 end
 endtask : run_phase

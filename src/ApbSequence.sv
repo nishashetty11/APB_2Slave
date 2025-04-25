@@ -45,8 +45,9 @@ if (!txn.randomize() with {
 })
   `uvm_error("SEQ", "Randomization failed");
 
-
-    txn.print();
+//   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
+  //  txn.print();
+  // $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
   
      start_item(txn); 
 
@@ -76,8 +77,10 @@ if (!txn.randomize() with {
   txn.apb_write_paddr[8] == 1;
 })
   `uvm_error("SEQ", "Randomization failed");
+   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
 
         txn.print();
+   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
     // Start and finish transaction
     start_item(txn);
     finish_item(txn);
@@ -105,8 +108,10 @@ if (!txn.randomize() with {
   txn.apb_write_paddr[8] == 0;
 })
   `uvm_error("SEQ", "Randomization failed");
+   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
 
         txn.print();
+   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
     // Start and finish transaction
     start_item(txn);
     finish_item(txn);
@@ -135,8 +140,10 @@ if (!txn.randomize() with {
   txn.apb_write_paddr[8] == 1;
 })
   `uvm_error("SEQ", "Randomization failed");
+   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
 
       txn.print();
+   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
     // Start and finish transaction
     start_item(txn);
     finish_item(txn);
