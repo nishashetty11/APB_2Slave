@@ -20,7 +20,8 @@ This APB design includes:
 
 ## APB Interface Block Diagram
 
-![image](https://github.com/user-attachments/assets/f3f4f351-8680-4ed1-b5cf-29483982ebd9)
+![image](https://github.com/user-attachments/assets/99574647-bd29-4d9d-9272-2ab32a6562e9)
+
 
 ## Operation Of APB
 ![image](https://github.com/user-attachments/assets/3d263d62-642d-48dd-ba70-5c2646565172)
