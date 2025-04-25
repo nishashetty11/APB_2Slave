@@ -38,17 +38,18 @@ class ApbWriteSlave1Sequence extends ApbSequence;
   virtual task body();
     // Create the transaction object
     txn = ApbSeqItem::type_id::create("txn");
+if (!txn.randomize() with {
+  txn.transfer == 1;
+  txn.READ_WRITE == 1;
+  txn.apb_write_paddr[8] == 0;
+})
+  `uvm_error("SEQ", "Randomization failed");
 
-    // Randomize the transaction
-    txn.randomize() with {
-        txn.transfer == 1;
-        txn.READ_WRITE == 1;
-        txn.apb_write_paddr[8] == 0;
-      }
-      
 
     txn.print();
-    start_item(txn);
+  
+     start_item(txn); 
+
     finish_item(txn);
   endtask
 
@@ -69,11 +70,12 @@ class ApbWriteSlave2Sequence extends ApbSequence;
     txn = ApbSeqItem::type_id::create("txn");
 
     // Randomize the transaction
-    txn.randomize() with {
-        txn.transfer == 1;
-        txn.READ_WRITE == 1;
-      txn.apb_write_paddr[8] == 1;
-      }
+if (!txn.randomize() with {
+  txn.transfer == 1;
+  txn.READ_WRITE == 1;
+  txn.apb_write_paddr[8] == 1;
+})
+  `uvm_error("SEQ", "Randomization failed");
 
         txn.print();
     // Start and finish transaction
@@ -97,12 +99,12 @@ class ApbReadSlave1Sequence extends ApbSequence;
     // Create the transaction object
     txn = ApbSeqItem::type_id::create("txn");
 
-    // Randomize the transaction
-    txn.randomize() with {
-        txn.transfer == 1;
-        txn.READ_WRITE == 0;
-        txn.apb_write_paddr[8] == 0;
-      }
+if (!txn.randomize() with {
+  txn.transfer == 1;
+  txn.READ_WRITE == 0;
+  txn.apb_write_paddr[8] == 0;
+})
+  `uvm_error("SEQ", "Randomization failed");
 
         txn.print();
     // Start and finish transaction
@@ -127,13 +129,13 @@ class ApbReadSlave2Sequence extends ApbSequence;
   virtual task body();
     // Create the transaction object
     txn = ApbSeqItem::type_id::create("txn");
+if (!txn.randomize() with {
+  txn.transfer == 1;
+  txn.READ_WRITE == 0;
+  txn.apb_write_paddr[8] == 1;
+})
+  `uvm_error("SEQ", "Randomization failed");
 
-    // Randomize the transaction
-     txn.randomize() with {
-        txn.transfer == 1;
-        txn.READ_WRITE == 0;
-       txn.apb_write_paddr[8] == 1;
-      }
       txn.print();
     // Start and finish transaction
     start_item(txn);
