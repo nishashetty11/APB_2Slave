@@ -39,7 +39,7 @@ class ApbOpMonitor extends uvm_monitor;
           item_collected_port.write(op_mon_h);
    $display("----------------------------------------------OUTPUT MONITOR-------------------------------------------------------");
 
-          `uvm_info("OUTPUT MONITOR",$sformatf("[%0t] transfer =%b , READ_WRITE =%b, apb_write_paddr =%h , apb_write_data =%h , apb_read_paddr =%h, apb_read_data=%0h",$time, vif.transfer, vif.READ_WRITE, vif.apb_write_paddr, vif.apb_write_data, vif.apb_read_paddr, vif.apb_read_data_out),UVM_LOW)
+          `uvm_info("OUTPUT MONITOR",$sformatf("[%0t] transfer =%b , READ_WRITE =%b, apb_write_paddr =%b , apb_write_data =%h , apb_read_paddr =%0b, apb_read_data=%0h",$time, vif.transfer, vif.READ_WRITE, vif.apb_write_paddr, vif.apb_write_data, vif.apb_read_paddr, vif.apb_read_data_out),UVM_LOW)
  
    $display("----------------------------------------------OUTPUT MONITOR-------------------------------------------------------");
    end

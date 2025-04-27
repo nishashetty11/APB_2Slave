@@ -31,6 +31,7 @@ virtual task run_phase(uvm_phase phase);
       item_collected_port.write(ip_mon_h);
    $display("----------------------------------------------INPUT MONITOR-------------------------------------------------------");
     ip_mon_h.print();
+    $display("WRITE ADDRESS = %b ", ip_mon_h.apb_write_paddr);
     $display("THE RESET IS %0b",vif.presetn);
    $display("----------------------------------------------INPUT MONITOR-------------------------------------------------------");
    end

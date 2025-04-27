@@ -34,8 +34,11 @@ virtual task drive();
  //       @(vif.drv_cb);
         vif.transfer <='b0;
         vif.READ_WRITE <='b0;
+        if(vif.READ_WRITE) begin
         vif.apb_write_paddr <='b0;
         vif.apb_write_data <= 'b0;
+         end
+        else
         vif.apb_read_paddr <= 'b0;
      end
    else
