@@ -38,7 +38,7 @@ class ApbWriteSlave1Sequence extends ApbSequence;
   virtual task body();
     // Create the transaction object
     txn = ApbSeqItem::type_id::create("txn");
-   repeat(5) begin
+   repeat(10) begin
 if (!txn.randomize() with {
   txn.transfer == 1;
   txn.READ_WRITE == 1;
@@ -73,21 +73,23 @@ class ApbWriteSlave2Sequence extends ApbSequence;
 
     txn = ApbSeqItem::type_id::create("txn");
 
- repeat(5) begin
+ repeat(10) begin
 if (!txn.randomize() with {
   txn.transfer == 1;
   txn.READ_WRITE == 1;
   txn.apb_write_paddr[8] == 1;
-});
-end
+})
   `uvm_error("SEQ", "Randomization failed");
-   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
 
-        txn.print();
-   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
-    // Start and finish transaction
-    start_item(txn);
+//   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
+  // txn.print();
+  $display("WRITE ADDRESS == %b",txn.apb_write_paddr);
+  // $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
+  
+     start_item(txn); 
+
     finish_item(txn);
+end
   endtask
 
 endclass
@@ -104,20 +106,23 @@ class ApbReadSlave1Sequence extends ApbSequence;
 
   virtual task body();
     txn = ApbSeqItem::type_id::create("txn");
-repeat(5) begin
+repeat(10) begin
 if (!txn.randomize() with {
   txn.transfer == 1;
   txn.READ_WRITE == 0;
-  txn.apb_write_paddr[8] == 0;
-});
-end
+  txn.apb_read_paddr[8] == 0;
+})
   `uvm_error("SEQ", "Randomization failed");
-   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
-        txn.print();
-   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
-    // Start and finish transaction
-    start_item(txn);
+
+//   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
+  // txn.print();
+  $display("WRITE ADDRESS == %b",txn.apb_write_paddr);
+  // $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
+  
+     start_item(txn); 
+
     finish_item(txn);
+end
   endtask
 
 endclass
@@ -137,21 +142,23 @@ class ApbReadSlave2Sequence extends ApbSequence;
   virtual task body();
     // Create the transaction object
     txn = ApbSeqItem::type_id::create("txn");
-repeat(5) begin
+repeat(10) begin
 if (!txn.randomize() with {
   txn.transfer == 1;
   txn.READ_WRITE == 0;
-  txn.apb_write_paddr[8] == 1;
-});
-end
+  txn.apb_read_paddr[8] == 1;
+})
   `uvm_error("SEQ", "Randomization failed");
-   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
 
-      txn.print();
-   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
-    // Start and finish transaction
-    start_item(txn);
+//   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
+  // txn.print();
+  $display("WRITE ADDRESS == %b",txn.apb_write_paddr);
+  // $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
+  
+     start_item(txn); 
+
     finish_item(txn);
+end
   endtask
 
 endclass

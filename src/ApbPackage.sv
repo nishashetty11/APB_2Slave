@@ -1,7 +1,7 @@
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 //`include "apb_design.sv"
-
+`include "apbtop.v"
 `include "defines.svh"
 `include "ApbInterface.sv"
 `include "ApbSeqItem.sv"

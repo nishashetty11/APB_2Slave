@@ -31,19 +31,19 @@ constraint c1_transfer { if(transfer ==0)
                  apb_read_data_out==0;
                 }}
 
-  constraint c2_apb_slave_select {
+  /*constraint c2_apb_slave_select {
    soft apb_write_paddr[8] dist {0:=1,1:=1};
-  }
+  }*/
   constraint c3_write_address {
     if (transfer==1 && READ_WRITE == 1) 
   {
-    apb_write_paddr inside {[0:255]}; 
+   soft  apb_write_paddr inside {[0:511]}; 
     apb_write_data inside {[0:255]};
   }
 }
     constraint c4_read_address {
       if (transfer==1 && READ_WRITE == 0) {
-    apb_read_paddr inside {[0:255]}; 
+ soft apb_read_paddr inside {[0:511]}; 
   }
 }
 
