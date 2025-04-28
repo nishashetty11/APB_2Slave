@@ -10,15 +10,17 @@ class ApbActiveAgent extends uvm_agent;
   endfunction
 
   function void build_phase(uvm_phase phase);
- 
+    if(get_is_active() ==UVM_ACTIVE) begin
       drv_h = ApbDriver::type_id::create("drv_h", this);
       seqr_h = ApbSequencer::type_id::create("seqr_h", this);
+    end
  
     ip_mon_h = ApbIpMonitor::type_id::create("ip_mon_h", this);
   endfunction : build_phase
 
   
-  function void connect_phase(uvm_phase phase);   
+  function void connect_phase(uvm_phase phase);  
+  if(get_is_active() ==UVM_ACTIVE) 
       drv_h.seq_item_port.connect(seqr_h.seq_item_export);
   endfunction : connect_phase
 
