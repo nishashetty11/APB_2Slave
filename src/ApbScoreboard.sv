@@ -16,7 +16,7 @@ class ApbScoreboard extends uvm_scoreboard;
    ApbSeqItem out_que[$];
    ApbSeqItem in_que[$];
 
-  logic [`DW-1:0] ApbMem [0:511];
+  logic [`DW-1:0] ApbMem [0:255];
   
 
     int pass = 0, fail = 0;
