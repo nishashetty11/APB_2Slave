@@ -32,7 +32,7 @@ constraint c1_transfer { if(transfer ==0)
                 }}
 
   constraint c2_apb_slave_select {
-    apb_write_paddr[8] dist {0:=1,1:=1};
+   soft apb_write_paddr[8] dist {0:=1,1:=1};
   }
   constraint c3_write_address {
     if (transfer==1 && READ_WRITE == 1) 

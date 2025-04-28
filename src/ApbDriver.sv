@@ -34,23 +34,22 @@ virtual task drive();
  //       @(vif.drv_cb);
         vif.transfer <='b0;
         vif.READ_WRITE <='b0;
-        if(vif.READ_WRITE) begin
         vif.apb_write_paddr <='b0;
         vif.apb_write_data <= 'b0;
-         end
-        else
         vif.apb_read_paddr <= 'b0;
      end
    else
      begin
 
-//       @(vif.drv_cb);
 
  
            vif.drv_cb.transfer <= txn.transfer;
            vif.drv_cb.READ_WRITE <= txn.READ_WRITE;
+           if(txn.READ_WRITE) begin
            vif.drv_cb.apb_write_paddr <= txn.apb_write_paddr;
            vif.drv_cb.apb_write_data <= txn.apb_write_data;
+           end
+             else
            vif.drv_cb.apb_read_paddr <= txn.apb_read_paddr;
 end 
 `uvm_info("DRIVER", $sformatf("[%0t] presetn = %b, transfer = %b, READ_WRITE = %b, apb_write_paddr = %h, apb_write_data = %h, apb_read_paddr = %h",
