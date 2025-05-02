@@ -25,7 +25,7 @@ initial begin
      uvm_config_db #(virtual ApbInterface)::set(null,"*","vif",intf);
      end
 initial begin
-  run_test("ApbWriteSlave2Test");
+  run_test("ApbWriteReadSlave2Test");
 
 end
 endmodule

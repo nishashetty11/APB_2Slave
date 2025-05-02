@@ -63,7 +63,7 @@ task run_phase(uvm_phase phase);
 
             if(exp_trans.transfer ==1)
               begin
-               if(exp_trans.READ_WRITE ==1)
+               if(exp_trans.READ_WRITE ==0)
                   begin
                     ApbMem[exp_trans.apb_write_paddr] =exp_trans.apb_write_data;
                     compare(exp_trans,act_trans);
