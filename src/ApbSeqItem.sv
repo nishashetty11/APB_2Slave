@@ -37,13 +37,13 @@ constraint c1_transfer { if(transfer ==0)
   constraint c3_write_address {
     if (transfer==1 && READ_WRITE == 0) 
   {
-   soft  apb_write_paddr inside {[0:511]}; 
+   soft  apb_write_paddr inside {[0:10]}; 
     apb_write_data inside {[0:255]};
   }
 }
     constraint c4_read_address {
       if (transfer==1 && READ_WRITE == 1) {
- soft apb_read_paddr inside {[0:511]}; 
+ soft apb_read_paddr inside {[0:10]}; 
   }
 }
 

@@ -26,7 +26,7 @@ class ApbOpMonitor extends uvm_monitor;
   endfunction
 
   virtual task run_phase(uvm_phase phase);
- @(vif.mon_cb)  
+// repeat(3) @(vif.mon_cb);  
   forever 
        begin
          @(vif.mon_cb) ;

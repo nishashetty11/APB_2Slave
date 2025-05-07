@@ -1,14 +1,14 @@
 interface ApbInterface(input bit pclk, input bit presetn);
 
-  logic [8:0] apb_read_paddr;       
-  logic [8:0] apb_write_paddr;    
-  logic [7:0] apb_write_data;
-  logic [7:0] apb_read_data_out;      
+  logic [`AW-1:0] apb_read_paddr;       
+  logic [`AW-1:0] apb_write_paddr;    
+  logic [`DW-1:0] apb_write_data;
+  logic [`DW-1:0] apb_read_data_out;      
   logic transfer;      
   logic READ_WRITE;               
 
   clocking drv_cb @(posedge pclk );
-    default input #1 output #1;
+    default input #0 output #0;
     output transfer;
     output  READ_WRITE;
     output apb_read_paddr;
@@ -17,7 +17,7 @@ interface ApbInterface(input bit pclk, input bit presetn);
   endclocking
 
   clocking mon_cb @(posedge pclk );
-    default input #1 output #1; 
+    default input #0 output #0; 
     input transfer;
     input READ_WRITE;
     input apb_read_paddr;

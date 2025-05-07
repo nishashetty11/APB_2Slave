@@ -10,8 +10,8 @@ module top;
      presetn=1;
     end
  APB_Protocol dut (
-    .PCLK(PCLK),
-    .PRESETn(intf.presetn),
+    .PCLK(pclk),
+    .PRESETn(presetn),
     .transfer(intf.transfer),
     .READ_WRITE(intf.READ_WRITE),
     .apb_write_paddr(intf.apb_write_paddr),
@@ -19,13 +19,13 @@ module top;
     .apb_read_paddr(intf.apb_read_paddr),
     .apb_read_data_out(intf.apb_read_data_out)
   );
- ApbInterface intf(pclk,presetn);
+ ApbInterface   intf(pclk,presetn);
 initial begin
       
      uvm_config_db #(virtual ApbInterface)::set(null,"*","vif",intf);
      end
 initial begin
-  run_test("ApbWriteReadSlave2Test");
+  run_test("ApbReadSlave2Test");
 
 end
 endmodule

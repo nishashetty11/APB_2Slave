@@ -21,7 +21,8 @@ endfunction : build_phase
 
 
 virtual task run_phase(uvm_phase phase);
-  forever begin
+//repeat(2) @(vif.mon_cb);  
+forever begin
     @(vif.mon_cb) begin
       ip_mon_h.transfer = vif.transfer;
       ip_mon_h.READ_WRITE =vif.READ_WRITE;

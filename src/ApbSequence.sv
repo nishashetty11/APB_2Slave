@@ -106,7 +106,7 @@ class ApbReadSlave1Sequence extends ApbSequence;
 
   virtual task body();
     txn = ApbSeqItem::type_id::create("txn");
-repeat(10) begin
+repeat(100) begin
 if (!txn.randomize() with {
   txn.transfer == 1;
   txn.READ_WRITE == 1;
@@ -142,7 +142,7 @@ class ApbReadSlave2Sequence extends ApbSequence;
   virtual task body();
     // Create the transaction object
     txn = ApbSeqItem::type_id::create("txn");
-repeat(10) begin
+repeat(100) begin
 if (!txn.randomize() with {
   txn.transfer == 1;
   txn.READ_WRITE == 1;
@@ -162,7 +162,7 @@ end
   endtask
 
 endclass
-
+/*
 class ApbWriteReadSequence extends ApbSequence;
 
   `uvm_object_utils(ApbWriteReadSequence)
@@ -171,43 +171,43 @@ class ApbWriteReadSequence extends ApbSequence;
     super.new(name);
   endfunction : new
 
-  ApbSeqItem write_txn;
-  ApbSeqItem read_txn;
+  ApbSeqItem txn;
 
   virtual task body();
 
-    // Create and randomize the write transaction
 
-    write_txn = ApbSeqItem::type_id::create("write_txn");
-    if (!write_txn.randomize() with {
-      write_txn.transfer == 1;
-      write_txn.READ_WRITE == 0; // Write operation
-      apb_write_paddr[8] == 1;
+    txn = ApbSeqItem::type_id::create("txn");
+    if (!txn.randomize() with {
+      txn.transfer == 1;
+      txn.READ_WRITE == 0; // Write operation
+      txn.apb_write_paddr[8] == 1;
     }) 
       `uvm_error("SEQ", "Write transaction randomization failed")
    
 
     // Display write transaction details
-    $display("WRITE ADDRESS == %b", write_txn.apb_write_paddr);
-    $display("WRITE DATA    == %h", write_txn.apb_write_data);
+    $display("WRITE ADDRESS == %b", txn.apb_write_paddr);
+    $display("WRITE DATA    == %h", txn.apb_write_data);
 
     // Start and finish the write transaction
-    start_item(write_txn);
-    finish_item(write_txn);
+  //  start_item(write_txn);
+   //  finish_item(write_txn);
+     txn.apb_write_paddr.rand_mode(0);
+     txn.apb_write_data.rand_mode(0);
 
     // Create the read transaction using the same address
-    read_txn = ApbSeqItem::type_id::create("read_txn");
-    read_txn.transfer = 1;
+    txn.transfer = 1;
     read_txn.READ_WRITE = 1; // Read operation
     read_txn.apb_read_paddr = write_txn.apb_write_paddr;
-
+   
+    `uvm_do_with(txn,{txn.transfer ==1 , txn.READ_WRITE ==1, txn.apb_read_paddr == txn.apb_write_paddr});
     // Start and finish the read transaction
     start_item(read_txn);
     finish_item(read_txn);
 
     // Optionally, compare the read data with the written data
     if (read_txn.apb_read_data_out !== write_txn.apb_write_data) begin
-      `uvm_error("SEQ", $sformatf("Data mismatch: Written %h, Read %h",
+      `uvm_error("SEQ", $sformatf("Data mismatch: Written %h, Read %h",1A
                   write_txn.apb_write_data, read_txn.apb_read_data_out))
     end else begin
       `uvm_info("SEQ", $sformatf("Data match: %h", read_txn.apb_read_data_out), UVM_LOW)
@@ -216,9 +216,42 @@ class ApbWriteReadSequence extends ApbSequence;
   endtask : body
 
 endclass : ApbWriteReadSequence
+*/
+class ApbWriteReadSequence extends ApbSequence;
 
+  `uvm_object_utils(ApbWriteReadSequence)
 
-  
+  ApbSeqItem txn;
+
+  function new(string name = "ApbWriteReadSequence");
+    super.new(name);
+  endfunction
+
+  virtual task body();
+    repeat (5) begin
+
+      // WRITE
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 1; // 1 for WRITE
+        apb_write_paddr[8] == 1;
+      })
+      
+      txn.apb_write_paddr.rand_mode(0);
+      txn.apb_read_paddr.rand_mode(0);
+
+      // READ
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0; // 0 for READ
+        apb_read_paddr == txn.apb_write_paddr;
+      })
+
+    end
+  endtask
+
+endclass
+
 
 
 

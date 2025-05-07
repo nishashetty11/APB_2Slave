@@ -154,11 +154,11 @@ endclass
 
 class ApbWriteReadSlave2Test extends uvm_test;
 
-  `uvm_component_utils(ApbWriteSlave2Test)
+  `uvm_component_utils(ApbWriteReadSlave2Test)
   ApbEnvironment env_h;
   ApbWriteReadSequence seq_h;
 
-  function new(string name = "ApbWriteSlave2Test",uvm_component parent);
+  function new(string name = "ApbWriteReadSlave2Test",uvm_component parent);
     super.new(name,parent);
   endfunction
 
