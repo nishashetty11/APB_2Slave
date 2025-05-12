@@ -6,7 +6,7 @@ module top;
  initial begin
      pclk=0;
      presetn =0;
-     #10;
+     #20;
      presetn=1;
     end
  APB_Protocol dut (
@@ -25,7 +25,7 @@ initial begin
      uvm_config_db #(virtual ApbInterface)::set(null,"*","vif",intf);
      end
 initial begin
-  run_test("ApbReadSlave2Test");
+  run_test("ApbWriteReadSlave2Test");
 
 end
 endmodule
