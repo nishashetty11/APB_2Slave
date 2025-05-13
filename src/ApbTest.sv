@@ -30,7 +30,7 @@ class ApbTest extends uvm_test;
 endclass
 
 
-class ApbWriteSlave1Test extends uvm_test;
+class ApbWriteSlave1Test extends ApbTest;
 
   `uvm_component_utils(ApbWriteSlave1Test)
   ApbEnvironment env_h;
@@ -62,7 +62,7 @@ class ApbWriteSlave1Test extends uvm_test;
 
 endclass
  
-class ApbWriteSlave2Test extends uvm_test;
+class ApbWriteSlave2Test extends ApbTest;
 
   `uvm_component_utils(ApbWriteSlave2Test)
   ApbEnvironment env_h;
@@ -92,7 +92,7 @@ class ApbWriteSlave2Test extends uvm_test;
 
 endclass
  
-class ApbReadSlave1Test extends uvm_test;
+class ApbReadSlave1Test extends ApbTest;
 
   `uvm_component_utils(ApbReadSlave1Test)
   ApbEnvironment env_h;
@@ -121,7 +121,7 @@ class ApbReadSlave1Test extends uvm_test;
 
 
 endclass
- class ApbReadSlave2Test extends uvm_test;
+ class ApbReadSlave2Test extends ApbTest;
 
   `uvm_component_utils(ApbReadSlave2Test)
   ApbEnvironment env_h;
@@ -179,6 +179,7 @@ class ApbWriteReadSlave2Test extends uvm_test;
     seq_h.start(env_h.act_h.seqr_h); 
   // end
    phase.drop_objection (this);
+phase.phase_done.set_drain_time(this,100);
   endtask: run_phase
 
 

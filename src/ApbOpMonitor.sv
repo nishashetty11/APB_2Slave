@@ -27,7 +27,7 @@ class ApbOpMonitor extends uvm_monitor;
 
   virtual task run_phase(uvm_phase phase);
 // repeat(3) @(vif.mon_cb);  
-// repeat(3) @(vif.mon_cb);  
+
 forever
        begin
          @(vif.mon_cb) ;
@@ -43,6 +43,7 @@ forever
           `uvm_info("OUTPUT MONITOR",$sformatf("[%0t] transfer =%b , READ_WRITE =%b, apb_write_paddr =%b , apb_write_data =%h , apb_read_paddr =%0b, apb_read_data=%0h",$time, vif.transfer, vif.READ_WRITE, vif.apb_write_paddr, vif.apb_write_data, vif.apb_read_paddr, vif.apb_read_data_out),UVM_LOW)
  
    $display("----------------------------------------------OUTPUT MONITOR-------------------------------------------------------");
+// repeat(1) @(vif.mon_cb);  
    end
            
   endtask

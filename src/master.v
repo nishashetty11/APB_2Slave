@@ -55,14 +55,16 @@
 			    PENABLE =0;
 
 			    if(READ_WRITE) 
-				 //     @(posedge PCLK)
+//@(posedge PCLK)				
+ //     @(posedge PCLK)
 	                       begin   PADDR = apb_read_paddr; end
 			    else 
 			      begin   
-			          //@(posedge PCLK)
+//@(posedge PCLK)			         
+ //@(posedge PCLK)
                                   PADDR = apb_write_paddr;
 				  PWDATA = apb_write_data;  end
-			    
+		    
 			    if(transfer && !PSLVERR)//// ! pslverr
 			      next_state = ENABLE;
 		            else

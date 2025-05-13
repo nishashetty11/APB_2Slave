@@ -20,10 +20,9 @@ function void build_phase(uvm_phase phase);
 endfunction : build_phase
 
 
-virtual task run_phase(uvm_phase phase);
-//repeat(2) @(vif.mon_cb);  
-forever begin
-    @(vif.mon_cb) begin
+virtual task run_phase(uvm_phase phase); 
+ forever begin
+   @(vif.mon_cb) begin
       ip_mon_h.transfer = vif.transfer;
       ip_mon_h.READ_WRITE =vif.READ_WRITE;
       ip_mon_h.apb_write_data = vif.apb_write_data;
@@ -35,9 +34,7 @@ forever begin
     $display("WRITE ADDRESS = %b  READ ADDRESS =%b ", ip_mon_h.apb_write_paddr, ip_mon_h.apb_read_paddr);
     $display("THE RESET IS %0b",vif.presetn);
    $display("----------------------------------------------INPUT MONITOR-------------------------------------------------------");
-   end
+  end
 end
-endtask : run_phase
-  
-
+endtask
 endclass: ApbIpMonitor
