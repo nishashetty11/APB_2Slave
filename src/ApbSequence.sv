@@ -225,6 +225,7 @@ class ApbWriteReadSequence extends uvm_sequence #(ApbSeqItem);
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })
+      `uvm_send(txn)
       addr = txn.apb_write_paddr;
 
 
@@ -234,6 +235,7 @@ class ApbWriteReadSequence extends uvm_sequence #(ApbSeqItem);
         READ_WRITE == 1;                // 1 = READ
         apb_read_paddr == addr;
       })
+      `uvm_send(txn)
     end
   endtask
 endclass
