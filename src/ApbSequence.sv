@@ -208,12 +208,44 @@ endclass
 
 
 
-class ApbWriteReadSequence extends uvm_sequence #(ApbSeqItem);
-  `uvm_object_utils(ApbWriteReadSequence)
+class ApbWriteReadSlave1Sequence extends ApbSequence;
+  `uvm_object_utils(ApbWriteReadSlave1Sequence)
 
   ApbSeqItem txn;
   bit [8:0] addr;
-  function new(string name = "ApbWriteReadSequence");
+  function new(string name = "ApbWriteReadSlave1Sequence");
+    super.new(name);
+  endfunction
+
+  virtual task body();
+    repeat (4) begin
+      // WRITE transaction
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 0;
+      })
+      `uvm_send(txn)
+      addr = txn.apb_write_paddr;
+
+
+      // READ transaction
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 1;                // 1 = READ
+        apb_read_paddr == addr;
+      })
+      `uvm_send(txn)
+    end
+  endtask
+endclass
+
+class ApbWriteReadSlave2Sequence extends ApbSequence;
+  `uvm_object_utils(ApbWriteReadSlave2Sequence)
+
+  ApbSeqItem txn;
+  bit [8:0] addr;
+  function new(string name = "ApbWriteReadSlave2Sequence");
     super.new(name);
   endfunction
 

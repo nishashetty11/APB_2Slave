@@ -29,6 +29,59 @@ interface ApbInterface(input bit pclk, input bit presetn);
   modport DRV (clocking drv_cb);
   modport MON (clocking mon_cb);
  
- 
+
+//============================================================
+// 1. WRITE ADDRESS VALIDITY
+// Ensures that during a write transfer, write address is not X or Z
+//============================================================
+property checkWriteAddressValidity;
+  @(posedge pclk) disable iff (!presetn)
+    transfer && !READ_WRITE |-> !$isunknown(apb_write_paddr);
+endproperty
+
+write_address_validity: assert property (checkWriteAddressValidity)
+        $display("WRITE_ADDRESS_VALIDITY: ASSERTION PASS");
+  else $error("WRITE_ADDRESS_VALIDITY: ASSERTION FAIL");
+
+//============================================================
+// 2. READ ADDRESS VALIDITY
+// Ensures that during a read transfer, read address is not X or Z
+//============================================================
+property checkReadAddressValidity;
+  @(posedge pclk) disable iff (!presetn)
+    transfer && READ_WRITE |-> !$isunknown(apb_read_paddr);
+endproperty
+
+read_address_validity: assert property (checkReadAddressValidity)
+       $display("READ_ADDRESS_VALIDITY: ASSERTION PASS");
+  else $error("READ_ADDRESS_VALIDITY: ASSERTION FAIL");
+
+//============================================================
+// 3. WRITE ADDRESS STABILITY
+// Ensures that during a write transfer, the address remains stable
+//============================================================
+property checkWriteAddressStability;
+  @(posedge pclk) disable iff (!presetn)
+    transfer && !READ_WRITE |=> $stable(apb_write_paddr);
+endproperty
+
+write_address_stability: assert property (checkWriteAddressStability)
+       $display("WRITE_ADDRESS_STABILITY: ASSERTION PASS");
+  else $error("WRITE_ADDRESS_STABILITY: ASSERTION FAIL");
+
+//============================================================
+// 4. TRANSFER VALIDITY (Dynamic)
+// Ensures that during any transfer:
+//   - If it's a read: read address must be valid
+//   - If it's a write: write address must be valid
+//============================================================
+property checkTransferValidity;
+  @(posedge pclk) disable iff (!presetn)
+    transfer |-> (READ_WRITE ? !$isunknown(apb_read_paddr) : !$isunknown(apb_write_paddr));
+endproperty
+
+transfer_validity: assert property (checkTransferValidity)
+       $display("TRANSFER_VALIDITY: ASSERTION PASS");
+  else $error("TRANSFER_VALIDITY: ASSERTION FAIL");
 
 endinterface

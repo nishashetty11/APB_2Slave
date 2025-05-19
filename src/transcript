@@ -1,3 +1,8 @@
+# vsim -c top 
+# Start time: 12:46:09 on May 19,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: ApbTop.sv(12): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 9, found 8.
+# ** Warning: ApbTop.sv(12): (vopt-2718) [TFMPC] - Missing connection for port 'PSLVERR'.
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -12,61 +17,13 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim $ 
-# Start time: 12:36:47 on May 14,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: (vopt-13130) Failed to find design unit $.
-#         Searched libraries:
-#             work
-# Optimization failed
-# Error loading design
-# End time: 12:36:47 on May 14,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vlog ApbTop.sv
-# QuestaSim vlog 10.6c Compiler 2017.07 Jul 25 2017
-# Start time: 12:37:04 on May 14,2025
-# vlog -reportprogress 300 ApbTop.sv 
-# ** Note: (vlog-2286) ApbPackage.sv(1): Using implicit +incdir+/tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# -- Compiling package ApbTop_sv_unit
-# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# -- Compiling module master_bridge
-# -- Compiling module slave1
-# -- Compiling module slave2
-# -- Compiling module APB_Protocol
-# -- Compiling interface ApbInterface
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 12:37:05 on May 14,2025, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-vsim -novopt -suppress 12110 top
-# vsim -novopt -suppress 12110 top 
-# Start time: 12:37:19 on May 14,2025
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.top
-# Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.ApbTop_sv_unit
 # Loading sv_std.std
 # Loading mtiUvm.uvm_pkg
-# Loading work.ApbTop_sv_unit
-# Loading work.top
-# Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.APB_Protocol
-# Loading work.APB_Protocol
-# Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.master_bridge
-# Loading work.master_bridge
-# Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.slave1
-# Loading work.slave1
-# Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.slave2
-# Loading work.slave2
-# Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.ApbInterface
-# Loading work.ApbInterface
-# Loading mtiUvm.questa_uvm_pkg
-# ** Warning: (vsim-3017) ApbTop.sv(12): [TFMPC] - Too few port connections. Expected 9, found 8.
-#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: apbtop.v
-# ** Warning: (vsim-3722) ApbTop.sv(12): [TFMPC] - Missing connection for port 'PSLVERR'.
+# Loading work.ApbTop_sv_unit(fast)
+# Loading work.top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.ApbInterface(fast)
 # Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
-add wave -position insertpoint sim:/top/dut/*
-run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
 # (C) 2007-2013 Mentor Graphics Corporation
@@ -243,6 +200,8 @@ run -all
 # FOR COMPARING : WRITE DATA =d1 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 35: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = d1  ACTUAL WDATA =d1 |EXPECTED  WRITE ADDR = 163 ACTUAL WRITE ADDR =163
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 45: uvm_test_top.env_h.act_h.drv_h [DRIVER] [45] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 1c5, apb_write_data = 95, apb_read_paddr = 163
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -285,6 +244,9 @@ run -all
 # FOR COMPARING : WRITE DATA =d1 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 45: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = d1  ACTUAL WDATA =d1 |EXPECTED  WRITE ADDR = 163 ACTUAL WRITE ADDR =163
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 55: uvm_test_top.env_h.act_h.drv_h [DRIVER] [55] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 1c5, apb_write_data = 95, apb_read_paddr = 163
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -327,6 +289,9 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =d1 READ DATA OUT =xx
 # UVM_INFO ApbScoreboard.sv(100) @ 55: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 0  ACTUAL RDATA =0 |EXPECTED  READ ADDR = 163 ACTUAL READ ADDR =163
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 65: uvm_test_top.env_h.act_h.drv_h [DRIVER] [65] presetn = 1, transfer = 1, READ_WRITE = 0, apb_write_paddr = 13a, apb_write_data = 41, apb_read_paddr = 05f
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -368,6 +333,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =d1 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 65: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 163 | ACTUAL RDATA = d1,ACTUAL ADDR = 163
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 75: uvm_test_top.env_h.act_h.drv_h [DRIVER] [75] presetn = 1, transfer = 1, READ_WRITE = 0, apb_write_paddr = 13a, apb_write_data = 41, apb_read_paddr = 05f
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -411,6 +378,8 @@ run -all
 # FOR COMPARING : WRITE DATA =41 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 75: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 41  ACTUAL WDATA =41 |EXPECTED  WRITE ADDR = 13a ACTUAL WRITE ADDR =13a
+# TRANSFER_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 85: uvm_test_top.env_h.act_h.drv_h [DRIVER] [85] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 1c3, apb_write_data = 8e, apb_read_paddr = 13a
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -453,6 +422,9 @@ run -all
 # FOR COMPARING : WRITE DATA =41 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 85: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 41  ACTUAL WDATA =41 |EXPECTED  WRITE ADDR = 13a ACTUAL WRITE ADDR =13a
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 95: uvm_test_top.env_h.act_h.drv_h [DRIVER] [95] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 1c3, apb_write_data = 8e, apb_read_paddr = 13a
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -495,6 +467,9 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =41 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 95: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 13a | ACTUAL RDATA = d1,ACTUAL ADDR = 13a
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 105: uvm_test_top.env_h.act_h.drv_h [DRIVER] [105] presetn = 1, transfer = 1, READ_WRITE = 0, apb_write_paddr = 113, apb_write_data = f1, apb_read_paddr = 02f
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -536,6 +511,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =41 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 105: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 13a | ACTUAL RDATA = 41,ACTUAL ADDR = 13a
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 115: uvm_test_top.env_h.act_h.drv_h [DRIVER] [115] presetn = 1, transfer = 1, READ_WRITE = 0, apb_write_paddr = 113, apb_write_data = f1, apb_read_paddr = 02f
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -579,6 +556,8 @@ run -all
 # FOR COMPARING : WRITE DATA =f1 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 115: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = f1  ACTUAL WDATA =f1 |EXPECTED  WRITE ADDR = 113 ACTUAL WRITE ADDR =113
+# TRANSFER_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 125: uvm_test_top.env_h.act_h.drv_h [DRIVER] [125] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 1ea, apb_write_data = f4, apb_read_paddr = 113
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -621,6 +600,9 @@ run -all
 # FOR COMPARING : WRITE DATA =f1 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 125: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = f1  ACTUAL WDATA =f1 |EXPECTED  WRITE ADDR = 113 ACTUAL WRITE ADDR =113
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 135: uvm_test_top.env_h.act_h.drv_h [DRIVER] [135] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 1ea, apb_write_data = f4, apb_read_paddr = 113
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -663,6 +645,9 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =f1 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 135: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 113 | ACTUAL RDATA = 41,ACTUAL ADDR = 113
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 145: uvm_test_top.env_h.act_h.drv_h [DRIVER] [145] presetn = 1, transfer = 1, READ_WRITE = 0, apb_write_paddr = 1d5, apb_write_data = 30, apb_read_paddr = 0f8
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -704,6 +689,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =f1 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 145: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 113 | ACTUAL RDATA = f1,ACTUAL ADDR = 113
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 155: uvm_test_top.env_h.act_h.drv_h [DRIVER] [155] presetn = 1, transfer = 1, READ_WRITE = 0, apb_write_paddr = 1d5, apb_write_data = 30, apb_read_paddr = 0f8
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -747,6 +734,8 @@ run -all
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 155: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 30  ACTUAL WDATA =30 |EXPECTED  WRITE ADDR = 1d5 ACTUAL WRITE ADDR =1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 165: uvm_test_top.env_h.act_h.drv_h [DRIVER] [165] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 08d, apb_write_data = 12, apb_read_paddr = 1d5
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -789,6 +778,9 @@ run -all
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # ---------------------------------------------------------------------PASS---------------------------------------------------------------------
 # UVM_INFO ApbScoreboard.sv(84) @ 165: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 30  ACTUAL WDATA =30 |EXPECTED  WRITE ADDR = 1d5 ACTUAL WRITE ADDR =1d5
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbDriver.sv(63) @ 175: uvm_test_top.env_h.act_h.drv_h [DRIVER] [175] presetn = 1, transfer = 1, READ_WRITE = 1, apb_write_paddr = 08d, apb_write_data = 12, apb_read_paddr = 1d5
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -831,6 +823,9 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 175: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = f1,ACTUAL ADDR = 1d5
+# WRITE_ADDRESS_STABILITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(39) @ 185: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WDATA = 30 | WPADDR = 1d5 | RPADDR = 1d5
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
@@ -853,6 +848,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 185: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(46) @ 195: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 1d5 | WDATA = 30 | RDATA = 30 | RPADDR = 1d5
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # UVM_INFO ApbOpMonitor.sv(43) @ 195: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [195] transfer =1 , READ_WRITE =1, apb_write_paddr =111010101 , apb_write_data =30 , apb_read_paddr =111010101, apb_read_data=30
@@ -875,6 +872,8 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 195: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(39) @ 205: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WDATA = 30 | WPADDR = 1d5 | RPADDR = 1d5
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
@@ -897,6 +896,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 205: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(46) @ 215: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 1d5 | WDATA = 30 | RDATA = 30 | RPADDR = 1d5
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # UVM_INFO ApbOpMonitor.sv(43) @ 215: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [215] transfer =1 , READ_WRITE =1, apb_write_paddr =111010101 , apb_write_data =30 , apb_read_paddr =111010101, apb_read_data=30
@@ -919,6 +920,8 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 215: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(39) @ 225: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WDATA = 30 | WPADDR = 1d5 | RPADDR = 1d5
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
@@ -941,6 +944,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 225: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(46) @ 235: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 1d5 | WDATA = 30 | RDATA = 30 | RPADDR = 1d5
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # UVM_INFO ApbOpMonitor.sv(43) @ 235: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [235] transfer =1 , READ_WRITE =1, apb_write_paddr =111010101 , apb_write_data =30 , apb_read_paddr =111010101, apb_read_data=30
@@ -963,6 +968,8 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 235: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(39) @ 245: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WDATA = 30 | WPADDR = 1d5 | RPADDR = 1d5
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
@@ -985,6 +992,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 245: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(46) @ 255: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 1d5 | WDATA = 30 | RDATA = 30 | RPADDR = 1d5
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # UVM_INFO ApbOpMonitor.sv(43) @ 255: uvm_test_top.env_h.pass_h.op_mon_h [OUTPUT MONITOR] [255] transfer =1 , READ_WRITE =1, apb_write_paddr =111010101 , apb_write_data =30 , apb_read_paddr =111010101, apb_read_data=30
@@ -1007,6 +1016,8 @@ run -all
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 255: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO ApbScoreboard.sv(39) @ 265: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WDATA = 30 | WPADDR = 1d5 | RPADDR = 1d5
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
@@ -1029,6 +1040,8 @@ run -all
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # FOR COMPARING : WRITE DATA =30 READ DATA OUT =xx
 # UVM_ERROR ApbScoreboard.sv(106) @ 265: uvm_test_top.env_h.scb_h [COMPARE] READ FAIL | EXPECTED  RDATA = 0,EXPECTED  ADDR = 1d5 | ACTUAL RDATA = 30,ACTUAL ADDR = 1d5
+# TRANSFER_VALIDITY: ASSERTION PASS
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 275: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # UVM_INFO ApbCoverage.sv(90) @ 275: uvm_test_top.env_h.cov_h [COVERAGE] 
 #  Input coverage is 100.000000 
@@ -1058,8 +1071,5 @@ run -all
 # [UVMTOP]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 275 ns  Iteration: 55  Instance: /top
-# 1
-# Break in Task uvm_pkg/uvm_root::run_test at /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-quit
-# End time: 12:38:41 on May 14,2025, Elapsed time: 0:01:22
-# Errors: 0, Warnings: 3
+# End time: 12:46:16 on May 19,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2
