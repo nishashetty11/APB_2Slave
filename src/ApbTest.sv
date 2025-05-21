@@ -205,5 +205,78 @@ phase.phase_done.set_drain_time(this,100);
 endclass
 
 
+class ApbRegressionTest extends ApbTest;
+
+  `uvm_component_utils(ApbRegressionTest)
+   ApbWriteSlave1Sequence writeseq1_h;
+   ApbWriteSlave2Sequence writeseq2_h;
+   ApbReadSlave1Sequence readseq1_h;
+   ApbReadSlave2Sequence readseq2_h;
+   ApbWriteReadSlave1Sequence writereadseq1_h;
+   ApbWriteReadSlave2Sequence writereadseq2_h;
+
+  function new(string name = "ApbWriteReadSlave2Test",uvm_component parent);
+    super.new(name,parent);
+  endfunction
+
+  virtual function void build_phase(uvm_phase phase);
+   super.build_phase(phase);
+  endfunction
+
+  virtual function void end_of_elaboration();
+     uvm_top.print_topology();
+  endfunction
+
+
+  task run_phase (uvm_phase phase);
+    
+    seq_h = ApbWriteReadSlave2Sequence::type_id::create("seq_h");
+    writeseq1_h = ApbWriteSlave1Sequence::type_id::create("writeseq1_h");
+    writeseq2_h = ApbWriteSlave2Sequence::type_id::create("writeseq2_h");
+    readseq1_h = ApbReadSlave1Sequence::type_id::create("readseq1_h");
+    readseq2_h = ApbReadSlave2Sequence::type_id::create("readseq2_h");
+    writereadseq1_h = ApbWriteReadSlave1Sequence::type_id::create("writereadseq1_h");
+    writereadseq2_h = ApbWriteReadSlave2Sequence::type_id::create("writereadseq2_h");
+
+    phase.raise_objection (this);
+    repeat(5)begin
+    writeseq1_h.start(env_h.act_h.seqr_h); 
+   phase.drop_objection (this);
+phase.phase_done.set_drain_time(this,100);
+    end
+
+  repeat(5)begin
+    writeseq2_h.start(env_h.act_h.seqr_h); 
+   phase.drop_objection (this);
+phase.phase_done.set_drain_time(this,100);
+    end
+ repeat(5)begin
+    readseq1_h.start(env_h.act_h.seqr_h); 
+   phase.drop_objection (this);
+phase.phase_done.set_drain_time(this,100);
+    end
+
+repeat(5)begin
+    readseq2_h.start(env_h.act_h.seqr_h); 
+   phase.drop_objection (this);
+phase.phase_done.set_drain_time(this,100);
+    end
+
+ repeat(5)begin
+    writereadseq1_h.start(env_h.act_h.seqr_h); 
+   phase.drop_objection (this);
+phase.phase_done.set_drain_time(this,100);
+    end
+ repeat(5)begin
+    writereadseq2_h.start(env_h.act_h.seqr_h); 
+   phase.drop_objection (this);
+phase.phase_done.set_drain_time(this,100);
+    end
+  endtask: run_phase
+
+
+endclass
+
+
 
 
