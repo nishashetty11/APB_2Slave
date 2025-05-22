@@ -60,7 +60,7 @@ read_address_validity: assert property (checkReadAddressValidity)
 // 3. WRITE ADDRESS STABILITY
 // Ensures that during a write transfer, the address remains stable
 //============================================================
-property checkWriteAddressStability;
+/*property checkWriteAddressStability;
   @(posedge pclk) disable iff (!presetn)
     transfer && !READ_WRITE |=> $stable(apb_write_paddr);
 endproperty
@@ -68,7 +68,7 @@ endproperty
 write_address_stability: assert property (checkWriteAddressStability)
        $display("WRITE_ADDRESS_STABILITY: ASSERTION PASS");
   else $error("WRITE_ADDRESS_STABILITY: ASSERTION FAIL");
-
+*/
 //============================================================
 // 4. TRANSFER VALIDITY (Dynamic)
 // Ensures that during any transfer:

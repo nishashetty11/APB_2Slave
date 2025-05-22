@@ -79,13 +79,13 @@ class ApbScoreboard extends uvm_scoreboard;
       if (exp_trans.apb_write_data == act_trans.apb_write_data &&
           exp_trans.apb_write_paddr == act_trans.apb_write_paddr) begin
         pass++;
-        $display("---------------------------------------------------------------------PASS---------------------------------------------------------------------");
+        $display("-------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------");
          `uvm_info("COMPARE", $sformatf("WRITE PASS | EXPECTED WDATA = %0h  ACTUAL WDATA =%0h |EXPECTED  WRITE ADDR = %0h ACTUAL WRITE ADDR =%0h",
                     exp_trans.apb_write_data,act_trans.apb_write_data,exp_trans.apb_write_paddr,act_trans.apb_write_paddr ), UVM_LOW)
       end
       else begin
         fail++;
-    $display("-------------------------------------------------------------------------FAIL---------------------------------------------------------------------");
+    $display("------------------------------------------------------------------------WRITE -FAIL---------------------------------------------------------------------");
    `uvm_error("COMPARE", $sformatf("WRITE FAIL | EXPECTED WDATA = %0h, EXPECTED ADDR = %0h | ACTUAL WDATA = %0h, ACTUAL ADDR = %0h",
                     exp_trans.apb_write_data, exp_trans.apb_write_paddr,
                     act_trans.apb_write_data, act_trans.apb_write_paddr))
@@ -95,12 +95,16 @@ class ApbScoreboard extends uvm_scoreboard;
     else begin
       if (exp_trans.apb_read_data_out === act_trans.apb_read_data_out &&
           exp_trans.apb_read_paddr == act_trans.apb_read_paddr) begin
+       
         pass++;
+    $display("-------------------------------------------------------------------------READ PASS---------------------------------------------------------------------");
+
         `uvm_info("COMPARE", $sformatf("READ PASS | EXPECTED RDATA = %0h  ACTUAL RDATA =%0h |EXPECTED  READ ADDR = %0h ACTUAL READ ADDR =%0h",
                     exp_trans.apb_read_data_out,act_trans.apb_read_data_out,exp_trans.apb_read_paddr,act_trans.apb_read_paddr ), UVM_LOW)
       end
       else begin
         fail++;
+    $display("-------------------------------------------------------------------------READ FAIL---------------------------------------------------------------------");
  `uvm_error("COMPARE", $sformatf("READ FAIL | EXPECTED  RDATA = %0h,EXPECTED  ADDR = %0h | ACTUAL RDATA = %0h,ACTUAL ADDR = %0h",
                     exp_trans.apb_read_data_out, exp_trans.apb_read_paddr,
                     act_trans.apb_read_data_out, act_trans.apb_read_paddr))

@@ -23,11 +23,14 @@ module slave2(
               PREADY = 0;
           else
 	  if(PSEL && !PENABLE && !PWRITE)
-	     begin PREADY = 0; end
+	     begin 
+                    reg_addr =  PADDR; 
+
+          PREADY = 0; end
 	         
 	  else if(PSEL && PENABLE && !PWRITE)
 	     begin  PREADY = 1;
-                    reg_addr =  PADDR; 
+          //          reg_addr =  PADDR; 
 	       end
           else if(PSEL && !PENABLE && PWRITE)
 	     begin  PREADY = 0; end
@@ -38,4 +41,5 @@ module slave2(
 
            else PREADY = 0;
         end
+
     endmodule

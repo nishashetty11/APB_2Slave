@@ -1,6 +1,6 @@
 # vsim -vopt work.top -voptargs="+acc=npr" -assertdebug -l simulation.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; run -all; coverage report -detail; exit" 
-# Start time: 15:34:42 on May 19,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 15:23:03 on May 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vopt-143) Recognized 1 FSM in module "master_bridge(fast)".
 # ** Warning: ApbTop.sv(12): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 9, found 8.
 # ** Warning: ApbTop.sv(12): (vopt-2718) [TFMPC] - Missing connection for port 'PSLVERR'.
@@ -131,7 +131,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @767                                       
+# txn                            ApbSeqItem  -     @759                                       
 #   apb_write_paddr              integral    9     'h9                                        
 #   apb_read_paddr               integral    9     'h3                                        
 #   apb_write_data               integral    8     'h95                                       
@@ -170,7 +170,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @767                                       
+# txn                            ApbSeqItem  -     @759                                       
 #   apb_write_paddr              integral    9     'h9                                        
 #   apb_read_paddr               integral    9     'h3                                        
 #   apb_write_data               integral    8     'h95                                       
@@ -217,7 +217,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @796                                       
+# txn                            ApbSeqItem  -     @788                                       
 #   apb_write_paddr              integral    9     'h0                                        
 #   apb_read_paddr               integral    9     'h1c7                                      
 #   apb_write_data               integral    8     'h32                                       
@@ -262,7 +262,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @796                                       
+# txn                            ApbSeqItem  -     @788                                       
 #   apb_write_paddr              integral    9     'h0                                        
 #   apb_read_paddr               integral    9     'h1c7                                      
 #   apb_write_data               integral    8     'h32                                       
@@ -311,7 +311,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @800                                       
+# txn                            ApbSeqItem  -     @792                                       
 #   apb_write_paddr              integral    9     'h7                                        
 #   apb_read_paddr               integral    9     'h36                                       
 #   apb_write_data               integral    8     'hb4                                       
@@ -356,7 +356,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @800                                       
+# txn                            ApbSeqItem  -     @792                                       
 #   apb_write_paddr              integral    9     'h7                                        
 #   apb_read_paddr               integral    9     'h36                                       
 #   apb_write_data               integral    8     'hb4                                       
@@ -405,7 +405,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @804                                       
+# txn                            ApbSeqItem  -     @796                                       
 #   apb_write_paddr              integral    9     'h5                                        
 #   apb_read_paddr               integral    9     'h1ec                                      
 #   apb_write_data               integral    8     'h38                                       
@@ -450,7 +450,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @804                                       
+# txn                            ApbSeqItem  -     @796                                       
 #   apb_write_paddr              integral    9     'h5                                        
 #   apb_read_paddr               integral    9     'h1ec                                      
 #   apb_write_data               integral    8     'h38                                       
@@ -499,7 +499,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @808                                       
+# txn                            ApbSeqItem  -     @800                                       
 #   apb_write_paddr              integral    9     'ha                                        
 #   apb_read_paddr               integral    9     'h9f                                       
 #   apb_write_data               integral    8     'hd3                                       
@@ -544,7 +544,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @808                                       
+# txn                            ApbSeqItem  -     @800                                       
 #   apb_write_paddr              integral    9     'ha                                        
 #   apb_read_paddr               integral    9     'h9f                                       
 #   apb_write_data               integral    8     'hd3                                       
@@ -593,7 +593,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @812                                       
+# txn                            ApbSeqItem  -     @804                                       
 #   apb_write_paddr              integral    9     'h8                                        
 #   apb_read_paddr               integral    9     'h1e1                                      
 #   apb_write_data               integral    8     'hb0                                       
@@ -638,7 +638,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @812                                       
+# txn                            ApbSeqItem  -     @804                                       
 #   apb_write_paddr              integral    9     'h8                                        
 #   apb_read_paddr               integral    9     'h1e1                                      
 #   apb_write_data               integral    8     'hb0                                       
@@ -687,7 +687,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @816                                       
+# txn                            ApbSeqItem  -     @808                                       
 #   apb_write_paddr              integral    9     'h9                                        
 #   apb_read_paddr               integral    9     'h124                                      
 #   apb_write_data               integral    8     'h12                                       
@@ -732,7 +732,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @816                                       
+# txn                            ApbSeqItem  -     @808                                       
 #   apb_write_paddr              integral    9     'h9                                        
 #   apb_read_paddr               integral    9     'h124                                      
 #   apb_write_data               integral    8     'h12                                       
@@ -781,7 +781,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @820                                       
+# txn                            ApbSeqItem  -     @812                                       
 #   apb_write_paddr              integral    9     'h2                                        
 #   apb_read_paddr               integral    9     'h10c                                      
 #   apb_write_data               integral    8     'h6d                                       
@@ -826,7 +826,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @820                                       
+# txn                            ApbSeqItem  -     @812                                       
 #   apb_write_paddr              integral    9     'h2                                        
 #   apb_read_paddr               integral    9     'h10c                                      
 #   apb_write_data               integral    8     'h6d                                       
@@ -875,7 +875,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @824                                       
+# txn                            ApbSeqItem  -     @816                                       
 #   apb_write_paddr              integral    9     'h1                                        
 #   apb_read_paddr               integral    9     'h1c6                                      
 #   apb_write_data               integral    8     'h1a                                       
@@ -920,7 +920,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @824                                       
+# txn                            ApbSeqItem  -     @816                                       
 #   apb_write_paddr              integral    9     'h1                                        
 #   apb_read_paddr               integral    9     'h1c6                                      
 #   apb_write_data               integral    8     'h1a                                       
@@ -969,7 +969,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @828                                       
+# txn                            ApbSeqItem  -     @820                                       
 #   apb_write_paddr              integral    9     'h9                                        
 #   apb_read_paddr               integral    9     'h1fd                                      
 #   apb_write_data               integral    8     'h7d                                       
@@ -1014,7 +1014,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @828                                       
+# txn                            ApbSeqItem  -     @820                                       
 #   apb_write_paddr              integral    9     'h9                                        
 #   apb_read_paddr               integral    9     'h1fd                                      
 #   apb_write_data               integral    8     'h7d                                       
@@ -1063,7 +1063,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @836                                       
+# txn                            ApbSeqItem  -     @828                                       
 #   apb_write_paddr              integral    9     'h0                                        
 #   apb_read_paddr               integral    9     'h9a                                       
 #   apb_write_data               integral    8     'hda                                       
@@ -1108,7 +1108,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @836                                       
+# txn                            ApbSeqItem  -     @828                                       
 #   apb_write_paddr              integral    9     'h0                                        
 #   apb_read_paddr               integral    9     'h9a                                       
 #   apb_write_data               integral    8     'hda                                       
@@ -1157,7 +1157,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @840                                       
+# txn                            ApbSeqItem  -     @832                                       
 #   apb_write_paddr              integral    9     'h2                                        
 #   apb_read_paddr               integral    9     'h34                                       
 #   apb_write_data               integral    8     'h50                                       
@@ -1202,7 +1202,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @840                                       
+# txn                            ApbSeqItem  -     @832                                       
 #   apb_write_paddr              integral    9     'h2                                        
 #   apb_read_paddr               integral    9     'h34                                       
 #   apb_write_data               integral    8     'h50                                       
@@ -1251,7 +1251,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @844                                       
+# txn                            ApbSeqItem  -     @836                                       
 #   apb_write_paddr              integral    9     'h7                                        
 #   apb_read_paddr               integral    9     'h11a                                      
 #   apb_write_data               integral    8     'h8                                        
@@ -1296,7 +1296,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @844                                       
+# txn                            ApbSeqItem  -     @836                                       
 #   apb_write_paddr              integral    9     'h7                                        
 #   apb_read_paddr               integral    9     'h11a                                      
 #   apb_write_data               integral    8     'h8                                        
@@ -1345,7 +1345,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @848                                       
+# txn                            ApbSeqItem  -     @840                                       
 #   apb_write_paddr              integral    9     'h6                                        
 #   apb_read_paddr               integral    9     'h1e7                                      
 #   apb_write_data               integral    8     'hfa                                       
@@ -1390,7 +1390,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @848                                       
+# txn                            ApbSeqItem  -     @840                                       
 #   apb_write_paddr              integral    9     'h6                                        
 #   apb_read_paddr               integral    9     'h1e7                                      
 #   apb_write_data               integral    8     'hfa                                       
@@ -1439,7 +1439,7 @@
 # --------------------------------------------------------------------------------------------
 # Name                           Type        Size  Value                                      
 # --------------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @852                                       
+# txn                            ApbSeqItem  -     @844                                       
 #   apb_write_paddr              integral    9     'h0                                        
 #   apb_read_paddr               integral    9     'hff                                       
 #   apb_write_data               integral    8     'h50                                       
@@ -1509,5 +1509,5 @@
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 315 ns  Iteration: 55  Instance: /top
 # Saving coverage database on exit...
-# End time: 15:34:47 on May 19,2025, Elapsed time: 0:00:05
+# End time: 15:23:07 on May 22,2025, Elapsed time: 0:00:04
 # Errors: 13, Warnings: 2

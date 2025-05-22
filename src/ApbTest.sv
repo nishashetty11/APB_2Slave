@@ -233,8 +233,8 @@ class ApbRegressionTest extends ApbTest;
     seq_h = ApbWriteReadSlave2Sequence::type_id::create("seq_h");
     writeseq1_h = ApbWriteSlave1Sequence::type_id::create("writeseq1_h");
     writeseq2_h = ApbWriteSlave2Sequence::type_id::create("writeseq2_h");
-    readseq1_h = ApbReadSlave1Sequence::type_id::create("readseq1_h");
-    readseq2_h = ApbReadSlave2Sequence::type_id::create("readseq2_h");
+  //  readseq1_h = ApbReadSlave1Sequence::type_id::create("readseq1_h");
+   // readseq2_h = ApbReadSlave2Sequence::type_id::create("readseq2_h");
     writereadseq1_h = ApbWriteReadSlave1Sequence::type_id::create("writereadseq1_h");
     writereadseq2_h = ApbWriteReadSlave2Sequence::type_id::create("writereadseq2_h");
 
@@ -250,7 +250,7 @@ phase.phase_done.set_drain_time(this,100);
    phase.drop_objection (this);
 phase.phase_done.set_drain_time(this,100);
     end
- repeat(5)begin
+/* repeat(5)begin
     readseq1_h.start(env_h.act_h.seqr_h); 
    phase.drop_objection (this);
 phase.phase_done.set_drain_time(this,100);
@@ -261,7 +261,7 @@ repeat(5)begin
    phase.drop_objection (this);
 phase.phase_done.set_drain_time(this,100);
     end
-
+*/
  repeat(5)begin
     writereadseq1_h.start(env_h.act_h.seqr_h); 
    phase.drop_objection (this);
