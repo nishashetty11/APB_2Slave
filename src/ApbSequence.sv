@@ -250,7 +250,7 @@ class ApbWriteReadSlave2Sequence extends ApbSequence;
   endfunction
 
   virtual task body();
-    repeat (4) begin
+    repeat (10) begin
       // WRITE transaction
       `uvm_do_with(txn, {
         transfer == 1;

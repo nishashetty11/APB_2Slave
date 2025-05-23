@@ -1,6 +1,3 @@
-# vsim -c top 
-# Start time: 15:32:01 on May 22,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -15,18 +12,65 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+# vsim $ 
+# Start time: 09:57:56 on May 23,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-13130) Failed to find design unit $.
+#         Searched libraries:
+#             work
+# Optimization failed
+# Error loading design
+# End time: 09:57:56 on May 23,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vlog ApbTop.sv
+# QuestaSim vlog 10.6c Compiler 2017.07 Jul 25 2017
+# Start time: 09:58:06 on May 23,2025
+# vlog -reportprogress 300 ApbTop.sv 
+# ** Note: (vlog-2286) ApbPackage.sv(1): Using implicit +incdir+/tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling package ApbTop_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module master_bridge
+# -- Compiling module slave1
+# -- Compiling module slave2
+# -- Compiling module APB_Protocol
+# -- Compiling interface ApbInterface
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 09:58:07 on May 23,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim -novopt -supress 12110 top
+# ** Error: (vish-3296) Unknown option '-supress'.
+# Use the -help option for complete vsim usage.
+# Error loading design
+vsim -novopt -suppress 12110 top
+# vsim -novopt -suppress 12110 top 
+# Start time: 09:58:29 on May 23,2025
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/shreyasb/APB_2slave_team05/APB_2Slave/src/work.top
+# Refreshing /home/shreyasb/APB_2slave_team05/APB_2Slave/src/work.ApbTop_sv_unit
 # Loading sv_std.std
 # Loading mtiUvm.uvm_pkg
-# Loading work.ApbTop_sv_unit(fast)
-# Loading work.top(fast)
-# Loading work.APB_Protocol(fast)
-# Loading work.master_bridge(fast)
-# Loading work.slave1(fast)
-# Loading work.slave2(fast)
-# Loading work.ApbInterface(fast)
-# Loading mtiUvm.questa_uvm_pkg(fast)
-# Loading work.ApbInterface(fast)
+# Loading work.ApbTop_sv_unit
+# Loading work.top
+# Refreshing /home/shreyasb/APB_2slave_team05/APB_2Slave/src/work.APB_Protocol
+# Loading work.APB_Protocol
+# Refreshing /home/shreyasb/APB_2slave_team05/APB_2Slave/src/work.master_bridge
+# Loading work.master_bridge
+# Refreshing /home/shreyasb/APB_2slave_team05/APB_2Slave/src/work.slave1
+# Loading work.slave1
+# Refreshing /home/shreyasb/APB_2slave_team05/APB_2Slave/src/work.slave2
+# Loading work.slave2
+# Refreshing /home/shreyasb/APB_2slave_team05/APB_2Slave/src/work.ApbInterface
+# Loading work.ApbInterface
+# Loading mtiUvm.questa_uvm_pkg
+# ** Warning: (vsim-3017) ApbTop.sv(12): [TFMPC] - Too few port connections. Expected 9, found 8.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: apbtop.v
+# ** Warning: (vsim-3722) ApbTop.sv(12): [TFMPC] - Missing connection for port 'PSLVERR'.
 # Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
+add wave -position insertpoint sim:/top/dut/*
+run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
 # (C) 2007-2013 Mentor Graphics Corporation
@@ -2150,5 +2194,8 @@
 # [UVMTOP]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 515 ns  Iteration: 55  Instance: /top
-# End time: 15:32:07 on May 22,2025, Elapsed time: 0:00:06
-# Errors: 0, Warnings: 0
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+quit
+# End time: 10:00:25 on May 23,2025, Elapsed time: 0:01:56
+# Errors: 0, Warnings: 3
