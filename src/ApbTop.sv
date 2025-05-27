@@ -25,7 +25,7 @@ initial begin
      uvm_config_db #(virtual ApbInterface)::set(null,"*","vif",intf);
      end
 initial begin
-  run_test("ApbRegressionTest");
+  run_test("ApbContinuousWRSlave1Test");
 
 end
 endmodule

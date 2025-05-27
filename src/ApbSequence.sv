@@ -40,7 +40,7 @@ class ApbWriteSlave1Sequence extends ApbSequence;
 
     repeat(10) begin
       `uvm_do_with(txn, {transfer == 1; READ_WRITE == 0; apb_write_paddr[8] == 0;})
-      `uvm_send(txn);
+    //  `uvm_send(txn);
       $display("WRITE ADDRESS == %b", txn.apb_write_paddr);
       $display("SLAVE 1");
     end
@@ -66,7 +66,7 @@ class ApbWriteSlave2Sequence extends ApbSequence;
  repeat(10) begin
 
       `uvm_do_with(txn, {transfer == 1; READ_WRITE == 0; apb_write_paddr[8] == 1;})
-      `uvm_send(txn);
+     // `uvm_send(txn);
 //   $display("----------------------------------------------SEQUENCE-------------------------------------------------------");
   // txn.print();
   $display("WRITE ADDRESS == %b",txn.apb_write_paddr);
@@ -298,13 +298,7 @@ virtual task body();
         apb_write_paddr[8] == 0;
       })
  
-      `uvm_send(txn)
-      `uvm_do_with(txn, {
-        transfer == 1;
-        READ_WRITE == 0;                // 0 = WRITE
-        apb_write_paddr[8] == 0;
-      })
-     `uvm_send(txn);
+    `uvm_send(txn)
       addr = txn.apb_write_paddr;
 
       // READ transaction
@@ -344,12 +338,6 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
       })
  
       `uvm_send(txn)
-      `uvm_do_with(txn, {
-        transfer == 1;
-        READ_WRITE == 0;                // 0 = WRITE
-        apb_write_paddr[8] == 1;
-      })
-     `uvm_send(txn);
       addr = txn.apb_write_paddr;
 
       // READ transaction
