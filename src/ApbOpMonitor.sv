@@ -10,8 +10,6 @@ class ApbOpMonitor extends uvm_monitor;
 
   uvm_analysis_port #(ApbSeqItem) item_collected_port;
 
-  //--------------------------------------------------------------------------------
-  // Function: Constructor
   function new (string name="ApbOpMonitor", uvm_component parent);
     super.new(name, parent);
     item_collected_port = new("item_collected_port", this);
@@ -26,24 +24,28 @@ class ApbOpMonitor extends uvm_monitor;
   endfunction
 
   virtual task run_phase(uvm_phase phase);
-// repeat(3) @(vif.mon_cb);  
-
 forever
        begin
          @(vif.mon_cb) ;
            op_mon_h.transfer= vif.transfer;
            op_mon_h.READ_WRITE =vif.READ_WRITE;
-           op_mon_h.apb_write_paddr = vif.apb_write_paddr;
-           op_mon_h.apb_write_data = vif.apb_write_data;
+           if(vif.READ_WRITE) begin
            op_mon_h.apb_read_paddr = vif.apb_read_paddr;
            op_mon_h.apb_read_data_out = vif.apb_read_data_out;
+           end
+           else begin
+           op_mon_h.apb_write_paddr = vif.apb_write_paddr;
+           op_mon_h.apb_write_data = vif.apb_write_data;
+          end
           item_collected_port.write(op_mon_h);
    $display("----------------------------------------------OUTPUT MONITOR-------------------------------------------------------");
-
+/*
           `uvm_info("OUTPUT MONITOR",$sformatf("[%0t] transfer =%b , READ_WRITE =%b, apb_write_paddr =%b , apb_write_data =%h , apb_read_paddr =%0b, apb_read_data=%0h",$time, vif.transfer, vif.READ_WRITE, vif.apb_write_paddr, vif.apb_write_data, vif.apb_read_paddr, vif.apb_read_data_out),UVM_LOW)
- 
+ */op_mon_h.print();
    $display("----------------------------------------------OUTPUT MONITOR-------------------------------------------------------");
-// repeat(1) @(vif.mon_cb);  
+
+ repeat(1)
+ @(vif.mon_cb);  
    end
            
   endtask

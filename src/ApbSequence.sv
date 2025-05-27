@@ -219,13 +219,14 @@ class ApbWriteReadSlave1Sequence extends ApbSequence;
 
   virtual task body();
     repeat (10) begin
-      // WRITE transaction
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 0;
       })
       `uvm_send(txn)
+
+ 
       addr = txn.apb_write_paddr;
 
 
@@ -235,7 +236,8 @@ class ApbWriteReadSlave1Sequence extends ApbSequence;
         READ_WRITE == 1;                // 1 = READ
         apb_read_paddr == addr;
       })
-      `uvm_send(txn)
+
+     `uvm_send(txn)
     end
   endtask
 endclass
@@ -273,14 +275,107 @@ class ApbWriteReadSlave2Sequence extends ApbSequence;
 endclass
 
 
-  
+  class ApbContinuousWRSlave1Sequence extends ApbSequence;
+  `uvm_object_utils(ApbContinuousWRSlave1Sequence)
+
+  ApbSeqItem txn;
+  bit [8:0] addr;
+  function new(string name = "ApbContinuousWRSlave1Sequence");
+    super.new(name);
+  endfunction
+virtual task body();
+    repeat (4) begin
+      // WRITE transaction
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 0;
+      })
+      `uvm_send(txn)
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 0;
+      })
+ 
+      `uvm_send(txn)
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 0;
+      })
+     `uvm_send(txn);
+      addr = txn.apb_write_paddr;
+
+      // READ transaction
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 1;                // 1 = READ
+        apb_read_paddr == addr;
+      })
+      `uvm_send(txn)
+    end
+  endtask
+endclass
 
 
+class ApbContinuousWRSlave2Sequence extends ApbSequence;
+  `uvm_object_utils(ApbContinuousWRSlave2Sequence)
 
+  ApbSeqItem txn;
+  bit [8:0] addr;
+  function new(string name = "ApbContinuousWRSlave2Sequence");
+    super.new(name);
+  endfunction
 
+  virtual task body();
+    repeat (4) begin
+      // WRITE transaction
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 1;
+      })
+      `uvm_send(txn)
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 1;
+      })
+ 
+      `uvm_send(txn)
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 1;
+      })
+     `uvm_send(txn);
+      addr = txn.apb_write_paddr;
 
+      // READ transaction
+      `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 1;                // 1 = READ
+        apb_read_paddr == addr;
+      })
+      `uvm_send(txn)
+    end
+  endtask
+endclass
 
+/*
+class ApbTransferValiditySequence extends ApbSequence;
+      
+  `uvm_object_utils(ApbTransferValiditySequence)
 
+  ApbSeqItem txn;
+  bit [8:0] addr;
+  function new(string name = "ApbTransferValiditySequence");
+    super.new(name);
+  endfunction
+
+  virtual task body();
+   */
 
 
 
