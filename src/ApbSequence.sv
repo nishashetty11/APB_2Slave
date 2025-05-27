@@ -321,9 +321,8 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
   function new(string name = "ApbContinuousWRSlave2Sequence");
     super.new(name);
   endfunction
-
-  virtual task body();
-    repeat (4) begin
+virtual task body();
+    repeat (2) begin
       // WRITE transaction
       `uvm_do_with(txn, {
         transfer == 1;
@@ -336,8 +335,20 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })
+ `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 1;
+      })
+/* `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 1;
+      })
  
-     // `uvm_send(txn)
+*/
+
+//    `uvm_send(txn)
       addr = txn.apb_write_paddr;
 
       // READ transaction
@@ -346,10 +357,11 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
         READ_WRITE == 1;                // 1 = READ
         apb_read_paddr == addr;
       })
-     // `uvm_send(txn)
+  //    `uvm_send(txn)
     end
   endtask
 endclass
+
 
 /*
 class ApbTransferValiditySequence extends ApbSequence;

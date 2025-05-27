@@ -47,6 +47,9 @@ constraint c1_transfer { if(transfer ==0)
   }
 }
 
-
+constraint c5_write_address_same{
+ foreach(apb_write_paddr[i])
+  if(i>0)
+    apb_write_paddr[i-1]!=apb_write_paddr[i];}
 endclass : ApbSeqItem
 
