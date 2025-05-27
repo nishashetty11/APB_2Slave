@@ -28,7 +28,8 @@ class ApbDriver extends uvm_driver#(ApbSeqItem);
   endtask: run_phase
 
 virtual task drive();
-  @(vif.drv_cb) begin
+ repeat(1)  @(vif.drv_cb);
+ @(vif.drv_cb) begin
  if (!vif.presetn)
       begin
 //      @(vif.drv_cb);

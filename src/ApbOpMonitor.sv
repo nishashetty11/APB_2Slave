@@ -23,7 +23,9 @@ class ApbOpMonitor extends uvm_monitor;
       `uvm_fatal("NOVIF", {"virtual interface must be set for: ", get_full_name(), ".vif"});
   endfunction
 
+
   virtual task run_phase(uvm_phase phase);
+@(vif.mon_cb);
 forever
        begin
          @(vif.mon_cb) ;

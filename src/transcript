@@ -13,7 +13,7 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -novopt -suppress 12110 top 
-# Start time: 12:36:00 on May 27,2025
+# Start time: 12:56:57 on May 27,2025
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.top
 # Refreshing /fetools/work_area/frontend/nishashetty/APB_2Slave/src/work.ApbTop_sv_unit
@@ -108,7 +108,7 @@ run -all
 # WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =0
 # THE RESET IS 0
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 5: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 0 | RW = 0 | WPADDR = 0 | WDATA = 0 | RDATA = 0 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(46) @ 15: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 0 | RW = 0 | WPADDR = 0 | WDATA = 0 | RDATA = 0 | RPADDR = 0
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
@@ -122,7 +122,7 @@ run -all
 #   apb_read_data_out  integral    8     'h0  
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 15: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 1 | TRANSFER = 0 | RW = 0 | WDATA = 0 | WPADDR = 0 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(39) @ 15: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 2 | TRANSFER = 0 | RW = 0 | WDATA = 0 | WPADDR = 0 | RPADDR = 0
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
@@ -137,6 +137,22 @@ run -all
 # --------------------------------------------
 # WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =0
 # THE RESET IS 0
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(39) @ 25: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 2 | TRANSFER = 0 | RW = 0 | WDATA = 0 | WPADDR = 0 | RPADDR = 0
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h0  
+#   apb_read_paddr     integral    9     'h0  
+#   apb_write_data     integral    8     'h0  
+#   transfer           integral    1     'h0  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h0  
+# --------------------------------------------
+# WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =0
+# THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # ---------------------------------DRIVER-------------------
 # --------------------------------------------------------------------------------------
@@ -156,7 +172,21 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 25: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 2 | TRANSFER = 0 | RW = 0 | WDATA = 0 | WPADDR = 0 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(46) @ 35: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 0 | RW = 0 | WPADDR = 0 | WDATA = 0 | RDATA = 0 | RPADDR = 0
+# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# op_mon_h             ApbSeqItem  -     @710 
+#   apb_write_paddr    integral    9     'h0  
+#   apb_read_paddr     integral    9     'h0  
+#   apb_write_data     integral    8     'h0  
+#   transfer           integral    1     'h0  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h0  
+# --------------------------------------------
+# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(39) @ 35: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 3 | TRANSFER = 0 | RW = 0 | WDATA = 0 | WPADDR = 0 | RPADDR = 0
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
@@ -172,75 +202,6 @@ run -all
 # WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =0
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 25: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 0 | RW = 0 | WPADDR = 0 | WDATA = 0 | RDATA = 0 | RPADDR = 0
-# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h0  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h0  
-#   transfer           integral    1     'h0  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h0  
-# --------------------------------------------
-# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @739                                 
-#   apb_write_paddr              integral    9     'h3                                  
-#   apb_read_paddr               integral    9     'h1fe                                
-#   apb_write_data               integral    8     'hd1                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    25                                   
-#   end_time                     time        64    25                                   
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 35: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 2 | TRANSFER = 1 | RW = 0 | WDATA = d1 | WPADDR = 3 | RPADDR = 0
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h3  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'hd1 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h0  
-# --------------------------------------------
-# WRITE ADDRESS = 000000011  READ ADDRESS =000000000 || WRITE DATA =d1
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @768                                 
-#   apb_write_paddr              integral    9     'h0                                  
-#   apb_read_paddr               integral    9     'h17c                                
-#   apb_write_data               integral    8     'h95                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    35                                   
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
 # UVM_INFO ApbScoreboard.sv(39) @ 45: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 3 | TRANSFER = 1 | RW = 0 | WDATA = d1 | WPADDR = 3 | RPADDR = 0
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
@@ -257,7 +218,27 @@ run -all
 # WRITE ADDRESS = 000000011  READ ADDRESS =000000000 || WRITE DATA =d1
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 45: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 3 | WDATA = d1 | RDATA = 0 | RPADDR = 0
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# ---------------------------------DRIVER-------------------
+# --------------------------------------------------------------------------------------
+# Name                           Type        Size  Value                                
+# --------------------------------------------------------------------------------------
+# txn                            ApbSeqItem  -     @768                                 
+#   apb_write_paddr              integral    9     'h2                                  
+#   apb_read_paddr               integral    9     'h1a                                 
+#   apb_write_data               integral    8     'he5                                 
+#   transfer                     integral    1     'h1                                  
+#   READ_WRITE                   integral    1     'h0                                  
+#   apb_read_data_out            integral    8     'h0                                  
+#   begin_time                   time        64    35                                   
+#   depth                        int         32    'd2                                  
+#   parent sequence (name)       string      5     seq_h                                
+#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
+#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
+# --------------------------------------------------------------------------------------
+# --------------------------------------DRIVER----------------------------------
+# UVM_INFO ApbScoreboard.sv(46) @ 55: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 3 | WDATA = d1 | RDATA = 0 | RPADDR = 0
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
@@ -271,44 +252,41 @@ run -all
 #   apb_read_data_out  integral    8     'h0  
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =d1 READ DATA OUT =xx
-# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 45: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = d1  ACTUAL WDATA =d1 |EXPECTED  WRITE ADDR = 3 ACTUAL WRITE ADDR =3
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @768                                 
-#   apb_write_paddr              integral    9     'h0                                  
-#   apb_read_paddr               integral    9     'h17c                                
-#   apb_write_data               integral    8     'h95                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    45                                   
-#   end_time                     time        64    45                                   
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 55: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 3 | TRANSFER = 1 | RW = 0 | WDATA = 95 | WPADDR = 0 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(39) @ 55: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 4 | TRANSFER = 1 | RW = 0 | WDATA = d1 | WPADDR = 3 | RPADDR = 0
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h0  
+#   apb_write_paddr    integral    9     'h3  
 #   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h95 
+#   apb_write_data     integral    8     'hd1 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
 #   apb_read_data_out  integral    8     'h0  
 # --------------------------------------------
-# WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =95
+# WRITE ADDRESS = 000000011  READ ADDRESS =000000000 || WRITE DATA =d1
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =d1 READ DATA OUT =xx
+# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(84) @ 55: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = d1  ACTUAL WDATA =d1 |EXPECTED  WRITE ADDR = 3 ACTUAL WRITE ADDR =3
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 65: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 4 | TRANSFER = 1 | RW = 0 | WDATA = e5 | WPADDR = 2 | RPADDR = 0
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h2  
+#   apb_read_paddr     integral    9     'h0  
+#   apb_write_data     integral    8     'he5 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h0  
+# --------------------------------------------
+# WRITE ADDRESS = 000000010  READ ADDRESS =000000000 || WRITE DATA =e5
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
@@ -318,9 +296,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @772                                 
-#   apb_write_paddr              integral    9     'ha6                                 
-#   apb_read_paddr               integral    9     'h0                                  
-#   apb_write_data               integral    8     'h41                                 
+#   apb_write_paddr              integral    9     'h94                                 
+#   apb_read_paddr               integral    9     'h2                                  
+#   apb_write_data               integral    8     'haa                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -331,74 +309,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 65: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 4 | TRANSFER = 1 | RW = 0 | WDATA = 95 | WPADDR = 0 | RPADDR = 0
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h0  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h95 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h0  
-# --------------------------------------------
-# WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =95
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 65: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 0 | WDATA = 95 | RDATA = 0 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(46) @ 75: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 2 | WDATA = e5 | RDATA = 0 | RPADDR = 0
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h0  
+#   apb_write_paddr    integral    9     'h2  
 #   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h95 
+#   apb_write_data     integral    8     'he5 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
 #   apb_read_data_out  integral    8     'h0  
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =95 READ DATA OUT =95
-# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 65: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 95  ACTUAL WDATA =95 |EXPECTED  WRITE ADDR = 0 ACTUAL WRITE ADDR =0
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @772                                 
-#   apb_write_paddr              integral    9     'ha6                                 
-#   apb_read_paddr               integral    9     'h0                                  
-#   apb_write_data               integral    8     'h41                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h1                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    65                                   
-#   end_time                     time        64    65                                   
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 75: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 4 | TRANSFER = 1 | RW = 1 | WDATA = 95 | WPADDR = 0 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(39) @ 75: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 5 | TRANSFER = 1 | RW = 0 | WDATA = e5 | WPADDR = 2 | RPADDR = 0
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h0  
+#   apb_write_paddr    integral    9     'h2  
 #   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h95 
+#   apb_write_data     integral    8     'he5 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h0  
+# --------------------------------------------
+# WRITE ADDRESS = 000000010  READ ADDRESS =000000000 || WRITE DATA =e5
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =e5 READ DATA OUT =xx
+# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(84) @ 75: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = e5  ACTUAL WDATA =e5 |EXPECTED  WRITE ADDR = 2 ACTUAL WRITE ADDR =2
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 85: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 5 | TRANSFER = 1 | RW = 1 | WDATA = e5 | WPADDR = 2 | RPADDR = 2
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h2  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'he5 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
 #   apb_read_data_out  integral    8     'h0  
 # --------------------------------------------
-# WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =95
+# WRITE ADDRESS = 000000010  READ ADDRESS =000000010 || WRITE DATA =e5
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
@@ -408,9 +367,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @776                                 
-#   apb_write_paddr              integral    9     'h6                                  
-#   apb_read_paddr               integral    9     'h82                                 
-#   apb_write_data               integral    8     'h8e                                 
+#   apb_write_paddr              integral    9     'h1                                  
+#   apb_read_paddr               integral    9     'h5f                                 
+#   apb_write_data               integral    8     'h41                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h0                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -421,74 +380,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 85: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 5 | TRANSFER = 1 | RW = 1 | WDATA = 95 | WPADDR = 0 | RPADDR = 0
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h0  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h95 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h0  
-# --------------------------------------------
-# WRITE ADDRESS = 000000000  READ ADDRESS =000000000 || WRITE DATA =95
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 85: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 0 | WDATA = 95 | RDATA = 95 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(46) @ 95: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 2 | WDATA = e5 | RDATA = e5 | RPADDR = 2
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h0  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h95 
+#   apb_write_paddr    integral    9     'h2  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'he5 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h95 
+#   apb_read_data_out  integral    8     'he5 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =95 READ DATA OUT =95
-# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 85: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 95  ACTUAL RDATA =95 |EXPECTED  READ ADDR = 0 ACTUAL READ ADDR =0
-# READ_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @776                                 
-#   apb_write_paddr              integral    9     'h6                                  
-#   apb_read_paddr               integral    9     'h82                                 
-#   apb_write_data               integral    8     'h8e                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    85                                   
-#   end_time                     time        64    85                                   
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 95: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 5 | TRANSFER = 1 | RW = 0 | WDATA = 8e | WPADDR = 6 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(39) @ 95: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 6 | TRANSFER = 1 | RW = 1 | WDATA = e5 | WPADDR = 2 | RPADDR = 2
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h8e 
+#   apb_write_paddr    integral    9     'h2  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'he5 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h1  
+#   apb_read_data_out  integral    8     'h0  
+# --------------------------------------------
+# WRITE ADDRESS = 000000010  READ ADDRESS =000000010 || WRITE DATA =e5
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =e5 READ DATA OUT =e5
+# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(103) @ 95: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = e5  ACTUAL RDATA =e5 |EXPECTED  READ ADDR = 2 ACTUAL READ ADDR =2
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 105: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 6 | TRANSFER = 1 | RW = 0 | WDATA = 41 | WPADDR = 1 | RPADDR = 2
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h1  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'h41 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h95 
+#   apb_read_data_out  integral    8     'he5 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000000 || WRITE DATA =8e
+# WRITE ADDRESS = 000000001  READ ADDRESS =000000010 || WRITE DATA =41
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
@@ -498,9 +438,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @780                                 
-#   apb_write_paddr              integral    9     'h8                                  
-#   apb_read_paddr               integral    9     'h2f                                 
-#   apb_write_data               integral    8     'hf1                                 
+#   apb_write_paddr              integral    9     'h6                                  
+#   apb_read_paddr               integral    9     'h1b6                                
+#   apb_write_data               integral    8     'h41                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h0                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -511,74 +451,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 105: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 6 | TRANSFER = 1 | RW = 0 | WDATA = 8e | WPADDR = 6 | RPADDR = 0
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h8e 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h95 
-# --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000000 || WRITE DATA =8e
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 105: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 6 | WDATA = 8e | RDATA = 95 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(46) @ 115: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 1 | WDATA = 41 | RDATA = e5 | RPADDR = 2
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'h8e 
+#   apb_write_paddr    integral    9     'h1  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'h41 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h95 
+#   apb_read_data_out  integral    8     'he5 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =8e READ DATA OUT =95
-# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 105: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 8e  ACTUAL WDATA =8e |EXPECTED  WRITE ADDR = 6 ACTUAL WRITE ADDR =6
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @780                                 
-#   apb_write_paddr              integral    9     'h8                                  
-#   apb_read_paddr               integral    9     'h2f                                 
-#   apb_write_data               integral    8     'hf1                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    105                                  
-#   end_time                     time        64    105                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 115: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 6 | TRANSFER = 1 | RW = 0 | WDATA = f1 | WPADDR = 8 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(39) @ 115: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 7 | TRANSFER = 1 | RW = 0 | WDATA = 41 | WPADDR = 1 | RPADDR = 2
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h8  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'hf1 
+#   apb_write_paddr    integral    9     'h1  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'h41 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h95 
+#   apb_read_data_out  integral    8     'he5 
 # --------------------------------------------
-# WRITE ADDRESS = 000001000  READ ADDRESS =000000000 || WRITE DATA =f1
+# WRITE ADDRESS = 000000001  READ ADDRESS =000000010 || WRITE DATA =41
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =41 READ DATA OUT =e5
+# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(84) @ 115: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 41  ACTUAL WDATA =41 |EXPECTED  WRITE ADDR = 1 ACTUAL WRITE ADDR =1
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 125: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 7 | TRANSFER = 1 | RW = 0 | WDATA = 41 | WPADDR = 6 | RPADDR = 2
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h6  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'h41 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'he5 
+# --------------------------------------------
+# WRITE ADDRESS = 000000110  READ ADDRESS =000000010 || WRITE DATA =41
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
@@ -588,9 +509,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @784                                 
-#   apb_write_paddr              integral    9     'h1ea                                
-#   apb_read_paddr               integral    9     'h8                                  
-#   apb_write_data               integral    8     'hf4                                 
+#   apb_write_paddr              integral    9     'h9c                                 
+#   apb_read_paddr               integral    9     'h6                                  
+#   apb_write_data               integral    8     'h26                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -601,74 +522,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 125: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 7 | TRANSFER = 1 | RW = 0 | WDATA = f1 | WPADDR = 8 | RPADDR = 0
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h8  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'hf1 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h95 
-# --------------------------------------------
-# WRITE ADDRESS = 000001000  READ ADDRESS =000000000 || WRITE DATA =f1
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 125: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 8 | WDATA = f1 | RDATA = 95 | RPADDR = 0
+# UVM_INFO ApbScoreboard.sv(46) @ 135: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 6 | WDATA = 41 | RDATA = e5 | RPADDR = 2
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h8  
-#   apb_read_paddr     integral    9     'h0  
-#   apb_write_data     integral    8     'hf1 
+#   apb_write_paddr    integral    9     'h6  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'h41 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h95 
+#   apb_read_data_out  integral    8     'he5 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =f1 READ DATA OUT =95
-# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 125: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = f1  ACTUAL WDATA =f1 |EXPECTED  WRITE ADDR = 8 ACTUAL WRITE ADDR =8
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @784                                 
-#   apb_write_paddr              integral    9     'h1ea                                
-#   apb_read_paddr               integral    9     'h8                                  
-#   apb_write_data               integral    8     'hf4                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h1                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    125                                  
-#   end_time                     time        64    125                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 135: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 7 | TRANSFER = 1 | RW = 1 | WDATA = f1 | WPADDR = 8 | RPADDR = 8
+# UVM_INFO ApbScoreboard.sv(39) @ 135: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 8 | TRANSFER = 1 | RW = 0 | WDATA = 41 | WPADDR = 6 | RPADDR = 2
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h8  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'hf1 
+#   apb_write_paddr    integral    9     'h6  
+#   apb_read_paddr     integral    9     'h2  
+#   apb_write_data     integral    8     'h41 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'he5 
+# --------------------------------------------
+# WRITE ADDRESS = 000000110  READ ADDRESS =000000010 || WRITE DATA =41
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =41 READ DATA OUT =e5
+# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(84) @ 135: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 41  ACTUAL WDATA =41 |EXPECTED  WRITE ADDR = 6 ACTUAL WRITE ADDR =6
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 145: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 8 | TRANSFER = 1 | RW = 1 | WDATA = 41 | WPADDR = 6 | RPADDR = 6
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h6  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'h41 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h95 
+#   apb_read_data_out  integral    8     'he5 
 # --------------------------------------------
-# WRITE ADDRESS = 000001000  READ ADDRESS =000001000 || WRITE DATA =f1
+# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =41
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
@@ -678,9 +580,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @788                                 
-#   apb_write_paddr              integral    9     'h1                                  
-#   apb_read_paddr               integral    9     'hf8                                 
-#   apb_write_data               integral    8     'h30                                 
+#   apb_write_paddr              integral    9     'h8                                  
+#   apb_read_paddr               integral    9     'h2f                                 
+#   apb_write_data               integral    8     'hf1                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h0                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -691,74 +593,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 145: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 8 | TRANSFER = 1 | RW = 1 | WDATA = f1 | WPADDR = 8 | RPADDR = 8
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h8  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'hf1 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h95 
-# --------------------------------------------
-# WRITE ADDRESS = 000001000  READ ADDRESS =000001000 || WRITE DATA =f1
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 145: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 8 | WDATA = f1 | RDATA = f1 | RPADDR = 8
+# UVM_INFO ApbScoreboard.sv(46) @ 155: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 6 | WDATA = 41 | RDATA = 41 | RPADDR = 6
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h8  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'hf1 
+#   apb_write_paddr    integral    9     'h6  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'h41 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'hf1 
+#   apb_read_data_out  integral    8     'h41 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =f1 READ DATA OUT =f1
-# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 145: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = f1  ACTUAL RDATA =f1 |EXPECTED  READ ADDR = 8 ACTUAL READ ADDR =8
-# READ_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @788                                 
-#   apb_write_paddr              integral    9     'h1                                  
-#   apb_read_paddr               integral    9     'hf8                                 
-#   apb_write_data               integral    8     'h30                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    145                                  
-#   end_time                     time        64    145                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 155: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 8 | TRANSFER = 1 | RW = 0 | WDATA = 30 | WPADDR = 1 | RPADDR = 8
+# UVM_INFO ApbScoreboard.sv(39) @ 155: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 9 | TRANSFER = 1 | RW = 1 | WDATA = 41 | WPADDR = 6 | RPADDR = 6
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h1  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'h30 
+#   apb_write_paddr    integral    9     'h6  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'h41 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h1  
+#   apb_read_data_out  integral    8     'he5 
+# --------------------------------------------
+# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =41
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =41 READ DATA OUT =41
+# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(103) @ 155: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 41  ACTUAL RDATA =41 |EXPECTED  READ ADDR = 6 ACTUAL READ ADDR =6
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 165: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 9 | TRANSFER = 1 | RW = 0 | WDATA = f1 | WPADDR = 8 | RPADDR = 6
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h8  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'hf1 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'hf1 
+#   apb_read_data_out  integral    8     'h41 
 # --------------------------------------------
-# WRITE ADDRESS = 000000001  READ ADDRESS =000001000 || WRITE DATA =30
+# WRITE ADDRESS = 000001000  READ ADDRESS =000000110 || WRITE DATA =f1
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
@@ -768,9 +651,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @792                                 
-#   apb_write_paddr              integral    9     'h9                                  
-#   apb_read_paddr               integral    9     'h6e                                 
-#   apb_write_data               integral    8     'h12                                 
+#   apb_write_paddr              integral    9     'h4                                  
+#   apb_read_paddr               integral    9     'h1e1                                
+#   apb_write_data               integral    8     'h77                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h0                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -781,74 +664,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 165: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 9 | TRANSFER = 1 | RW = 0 | WDATA = 30 | WPADDR = 1 | RPADDR = 8
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h1  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'h30 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'hf1 
-# --------------------------------------------
-# WRITE ADDRESS = 000000001  READ ADDRESS =000001000 || WRITE DATA =30
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 165: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 1 | WDATA = 30 | RDATA = f1 | RPADDR = 8
+# UVM_INFO ApbScoreboard.sv(46) @ 175: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 8 | WDATA = f1 | RDATA = 41 | RPADDR = 6
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h1  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'h30 
+#   apb_write_paddr    integral    9     'h8  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'hf1 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'hf1 
+#   apb_read_data_out  integral    8     'h41 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =30 READ DATA OUT =f1
-# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 165: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 30  ACTUAL WDATA =30 |EXPECTED  WRITE ADDR = 1 ACTUAL WRITE ADDR =1
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @792                                 
-#   apb_write_paddr              integral    9     'h9                                  
-#   apb_read_paddr               integral    9     'h6e                                 
-#   apb_write_data               integral    8     'h12                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    165                                  
-#   end_time                     time        64    165                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 175: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 9 | TRANSFER = 1 | RW = 0 | WDATA = 12 | WPADDR = 9 | RPADDR = 8
+# UVM_INFO ApbScoreboard.sv(39) @ 175: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 10 | TRANSFER = 1 | RW = 0 | WDATA = f1 | WPADDR = 8 | RPADDR = 6
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h9  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'h12 
+#   apb_write_paddr    integral    9     'h8  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'hf1 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'hf1 
+#   apb_read_data_out  integral    8     'h41 
 # --------------------------------------------
-# WRITE ADDRESS = 000001001  READ ADDRESS =000001000 || WRITE DATA =12
+# WRITE ADDRESS = 000001000  READ ADDRESS =000000110 || WRITE DATA =f1
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =f1 READ DATA OUT =41
+# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(84) @ 175: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = f1  ACTUAL WDATA =f1 |EXPECTED  WRITE ADDR = 8 ACTUAL WRITE ADDR =8
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 185: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 10 | TRANSFER = 1 | RW = 0 | WDATA = 77 | WPADDR = 4 | RPADDR = 6
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h4  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'h77 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h41 
+# --------------------------------------------
+# WRITE ADDRESS = 000000100  READ ADDRESS =000000110 || WRITE DATA =77
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
@@ -858,9 +722,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @796                                 
-#   apb_write_paddr              integral    9     'h7e                                 
-#   apb_read_paddr               integral    9     'h9                                  
-#   apb_write_data               integral    8     'h33                                 
+#   apb_write_paddr              integral    9     'h5b                                 
+#   apb_read_paddr               integral    9     'h4                                  
+#   apb_write_data               integral    8     'h31                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -871,74 +735,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 185: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 10 | TRANSFER = 1 | RW = 0 | WDATA = 12 | WPADDR = 9 | RPADDR = 8
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h9  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'h12 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'hf1 
-# --------------------------------------------
-# WRITE ADDRESS = 000001001  READ ADDRESS =000001000 || WRITE DATA =12
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 185: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 9 | WDATA = 12 | RDATA = f1 | RPADDR = 8
+# UVM_INFO ApbScoreboard.sv(46) @ 195: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 4 | WDATA = 77 | RDATA = 41 | RPADDR = 6
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h9  
-#   apb_read_paddr     integral    9     'h8  
-#   apb_write_data     integral    8     'h12 
+#   apb_write_paddr    integral    9     'h4  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'h77 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'hf1 
+#   apb_read_data_out  integral    8     'h41 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =12 READ DATA OUT =f1
-# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 185: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 12  ACTUAL WDATA =12 |EXPECTED  WRITE ADDR = 9 ACTUAL WRITE ADDR =9
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @796                                 
-#   apb_write_paddr              integral    9     'h7e                                 
-#   apb_read_paddr               integral    9     'h9                                  
-#   apb_write_data               integral    8     'h33                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h1                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    185                                  
-#   end_time                     time        64    185                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 195: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 10 | TRANSFER = 1 | RW = 1 | WDATA = 12 | WPADDR = 9 | RPADDR = 9
+# UVM_INFO ApbScoreboard.sv(39) @ 195: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 11 | TRANSFER = 1 | RW = 0 | WDATA = 77 | WPADDR = 4 | RPADDR = 6
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h9  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h12 
+#   apb_write_paddr    integral    9     'h4  
+#   apb_read_paddr     integral    9     'h6  
+#   apb_write_data     integral    8     'h77 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h41 
+# --------------------------------------------
+# WRITE ADDRESS = 000000100  READ ADDRESS =000000110 || WRITE DATA =77
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =77 READ DATA OUT =41
+# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(84) @ 195: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 77  ACTUAL WDATA =77 |EXPECTED  WRITE ADDR = 4 ACTUAL WRITE ADDR =4
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 205: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 11 | TRANSFER = 1 | RW = 1 | WDATA = 77 | WPADDR = 4 | RPADDR = 4
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h4  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h77 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'hf1 
+#   apb_read_data_out  integral    8     'h41 
 # --------------------------------------------
-# WRITE ADDRESS = 000001001  READ ADDRESS =000001001 || WRITE DATA =12
+# WRITE ADDRESS = 000000100  READ ADDRESS =000000100 || WRITE DATA =77
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
@@ -948,9 +793,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @800                                 
-#   apb_write_paddr              integral    9     'h2                                  
-#   apb_read_paddr               integral    9     'h1                                  
-#   apb_write_data               integral    8     'h1                                  
+#   apb_write_paddr              integral    9     'h1                                  
+#   apb_read_paddr               integral    9     'hf8                                 
+#   apb_write_data               integral    8     'h30                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h0                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -961,74 +806,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 205: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 11 | TRANSFER = 1 | RW = 1 | WDATA = 12 | WPADDR = 9 | RPADDR = 9
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h9  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h12 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'hf1 
-# --------------------------------------------
-# WRITE ADDRESS = 000001001  READ ADDRESS =000001001 || WRITE DATA =12
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 205: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 9 | WDATA = 12 | RDATA = 12 | RPADDR = 9
+# UVM_INFO ApbScoreboard.sv(46) @ 215: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 4 | WDATA = 77 | RDATA = 77 | RPADDR = 4
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h9  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h12 
+#   apb_write_paddr    integral    9     'h4  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h77 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h12 
+#   apb_read_data_out  integral    8     'h77 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =12 READ DATA OUT =12
-# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 205: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 12  ACTUAL RDATA =12 |EXPECTED  READ ADDR = 9 ACTUAL READ ADDR =9
-# READ_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @800                                 
-#   apb_write_paddr              integral    9     'h2                                  
-#   apb_read_paddr               integral    9     'h1                                  
-#   apb_write_data               integral    8     'h1                                  
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    205                                  
-#   end_time                     time        64    205                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 215: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 11 | TRANSFER = 1 | RW = 0 | WDATA = 1 | WPADDR = 2 | RPADDR = 9
+# UVM_INFO ApbScoreboard.sv(39) @ 215: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 12 | TRANSFER = 1 | RW = 1 | WDATA = 77 | WPADDR = 4 | RPADDR = 4
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h2  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h1  
+#   apb_write_paddr    integral    9     'h4  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h77 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h1  
+#   apb_read_data_out  integral    8     'h41 
+# --------------------------------------------
+# WRITE ADDRESS = 000000100  READ ADDRESS =000000100 || WRITE DATA =77
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =77 READ DATA OUT =77
+# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(103) @ 215: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 77  ACTUAL RDATA =77 |EXPECTED  READ ADDR = 4 ACTUAL READ ADDR =4
+# READ_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 225: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 12 | TRANSFER = 1 | RW = 0 | WDATA = 30 | WPADDR = 1 | RPADDR = 4
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h1  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h30 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h12 
+#   apb_read_data_out  integral    8     'h77 
 # --------------------------------------------
-# WRITE ADDRESS = 000000010  READ ADDRESS =000001001 || WRITE DATA =1
+# WRITE ADDRESS = 000000001  READ ADDRESS =000000100 || WRITE DATA =30
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
@@ -1038,9 +864,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @804                                 
-#   apb_write_paddr              integral    9     'h6                                  
-#   apb_read_paddr               integral    9     'h193                                
-#   apb_write_data               integral    8     'h9e                                 
+#   apb_write_paddr              integral    9     'h7                                  
+#   apb_read_paddr               integral    9     'hd6                                 
+#   apb_write_data               integral    8     'h9d                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h0                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -1051,74 +877,55 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 225: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 12 | TRANSFER = 1 | RW = 0 | WDATA = 1 | WPADDR = 2 | RPADDR = 9
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h2  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h1  
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h12 
-# --------------------------------------------
-# WRITE ADDRESS = 000000010  READ ADDRESS =000001001 || WRITE DATA =1
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 225: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 2 | WDATA = 1 | RDATA = 12 | RPADDR = 9
+# UVM_INFO ApbScoreboard.sv(46) @ 235: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 1 | WDATA = 30 | RDATA = 77 | RPADDR = 4
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h2  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h1  
+#   apb_write_paddr    integral    9     'h1  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h30 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h12 
+#   apb_read_data_out  integral    8     'h77 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =01 READ DATA OUT =12
-# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 225: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 1  ACTUAL WDATA =1 |EXPECTED  WRITE ADDR = 2 ACTUAL WRITE ADDR =2
-# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @804                                 
-#   apb_write_paddr              integral    9     'h6                                  
-#   apb_read_paddr               integral    9     'h193                                
-#   apb_write_data               integral    8     'h9e                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h0                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    225                                  
-#   end_time                     time        64    225                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 235: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 12 | TRANSFER = 1 | RW = 0 | WDATA = 9e | WPADDR = 6 | RPADDR = 9
+# UVM_INFO ApbScoreboard.sv(39) @ 235: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 13 | TRANSFER = 1 | RW = 0 | WDATA = 30 | WPADDR = 1 | RPADDR = 4
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h1  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h30 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h12 
+#   apb_read_data_out  integral    8     'h77 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000001001 || WRITE DATA =9e
+# WRITE ADDRESS = 000000001  READ ADDRESS =000000100 || WRITE DATA =30
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =30 READ DATA OUT =77
+# -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(84) @ 235: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 30  ACTUAL WDATA =30 |EXPECTED  WRITE ADDR = 1 ACTUAL WRITE ADDR =1
+# WRITE_ADDRESS_VALIDITY: ASSERTION PASS
+# TRANSFER_VALIDITY: ASSERTION PASS
+# UVM_INFO ApbScoreboard.sv(39) @ 245: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 13 | TRANSFER = 1 | RW = 0 | WDATA = 9d | WPADDR = 7 | RPADDR = 4
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h9d 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h77 
+# --------------------------------------------
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000100 || WRITE DATA =9d
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
@@ -1128,9 +935,9 @@ run -all
 # Name                           Type        Size  Value                                
 # --------------------------------------------------------------------------------------
 # txn                            ApbSeqItem  -     @808                                 
-#   apb_write_paddr              integral    9     'h18d                                
-#   apb_read_paddr               integral    9     'h6                                  
-#   apb_write_data               integral    8     'he3                                 
+#   apb_write_paddr              integral    9     'h1a6                                
+#   apb_read_paddr               integral    9     'h7                                  
+#   apb_write_data               integral    8     'hfa                                 
 #   transfer                     integral    1     'h1                                  
 #   READ_WRITE                   integral    1     'h1                                  
 #   apb_read_data_out            integral    8     'h0                                  
@@ -1141,323 +948,269 @@ run -all
 #   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
 # --------------------------------------------------------------------------------------
 # --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 245: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 13 | TRANSFER = 1 | RW = 0 | WDATA = 9e | WPADDR = 6 | RPADDR = 9
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h9e 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h12 
-# --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000001001 || WRITE DATA =9e
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 245: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 6 | WDATA = 9e | RDATA = 12 | RPADDR = 9
+# UVM_INFO ApbScoreboard.sv(46) @ 255: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 0 | WPADDR = 7 | WDATA = 9d | RDATA = 77 | RPADDR = 4
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h9  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h0  
-#   apb_read_data_out  integral    8     'h12 
+#   apb_read_data_out  integral    8     'h77 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =9e READ DATA OUT =12
+# UVM_INFO ApbScoreboard.sv(39) @ 255: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 14 | TRANSFER = 1 | RW = 0 | WDATA = 9d | WPADDR = 7 | RPADDR = 4
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h4  
+#   apb_write_data     integral    8     'h9d 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h0  
+#   apb_read_data_out  integral    8     'h77 
+# --------------------------------------------
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000100 || WRITE DATA =9d
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =9d READ DATA OUT =77
 # -------------------------------------------------------------------WRITE--PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(84) @ 245: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 9e  ACTUAL WDATA =9e |EXPECTED  WRITE ADDR = 6 ACTUAL WRITE ADDR =6
+# UVM_INFO ApbScoreboard.sv(84) @ 255: uvm_test_top.env_h.scb_h [COMPARE] WRITE PASS | EXPECTED WDATA = 9d  ACTUAL WDATA =9d |EXPECTED  WRITE ADDR = 7 ACTUAL WRITE ADDR =7
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# ---------------------------------DRIVER-------------------
-# --------------------------------------------------------------------------------------
-# Name                           Type        Size  Value                                
-# --------------------------------------------------------------------------------------
-# txn                            ApbSeqItem  -     @808                                 
-#   apb_write_paddr              integral    9     'h18d                                
-#   apb_read_paddr               integral    9     'h6                                  
-#   apb_write_data               integral    8     'he3                                 
-#   transfer                     integral    1     'h1                                  
-#   READ_WRITE                   integral    1     'h1                                  
-#   apb_read_data_out            integral    8     'h0                                  
-#   begin_time                   time        64    245                                  
-#   end_time                     time        64    245                                  
-#   depth                        int         32    'd2                                  
-#   parent sequence (name)       string      5     seq_h                                
-#   parent sequence (full name)  string      37    uvm_test_top.env_h.act_h.seqr_h.seq_h
-#   sequencer                    string      31    uvm_test_top.env_h.act_h.seqr_h      
-# --------------------------------------------------------------------------------------
-# --------------------------------------DRIVER----------------------------------
-# UVM_INFO ApbScoreboard.sv(39) @ 255: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 13 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(39) @ 265: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 14 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h12 
+#   apb_read_data_out  integral    8     'h77 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 265: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 14 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h12 
-# --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 265: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 6 | WDATA = 9e | RDATA = 9e | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(46) @ 275: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 7 | WDATA = 9d | RDATA = 9d | RPADDR = 7
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =9e READ DATA OUT =9e
+# UVM_INFO ApbScoreboard.sv(39) @ 275: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 15 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h1  
+#   apb_read_data_out  integral    8     'h77 
+# --------------------------------------------
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =9d READ DATA OUT =9d
 # -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 265: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9e  ACTUAL RDATA =9e |EXPECTED  READ ADDR = 6 ACTUAL READ ADDR =6
+# UVM_INFO ApbScoreboard.sv(103) @ 275: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9d  ACTUAL RDATA =9d |EXPECTED  READ ADDR = 7 ACTUAL READ ADDR =7
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 275: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 14 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(39) @ 285: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 15 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 285: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 15 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
-# --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 285: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 6 | WDATA = 9e | RDATA = 9e | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(46) @ 295: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 7 | WDATA = 9d | RDATA = 9d | RPADDR = 7
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =9e READ DATA OUT =9e
+# UVM_INFO ApbScoreboard.sv(39) @ 295: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 16 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h1  
+#   apb_read_data_out  integral    8     'h9d 
+# --------------------------------------------
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =9d READ DATA OUT =9d
 # -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 285: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9e  ACTUAL RDATA =9e |EXPECTED  READ ADDR = 6 ACTUAL READ ADDR =6
+# UVM_INFO ApbScoreboard.sv(103) @ 295: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9d  ACTUAL RDATA =9d |EXPECTED  READ ADDR = 7 ACTUAL READ ADDR =7
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 295: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 15 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(39) @ 305: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 16 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 305: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 16 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
-# --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 305: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 6 | WDATA = 9e | RDATA = 9e | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(46) @ 315: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 7 | WDATA = 9d | RDATA = 9d | RPADDR = 7
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =9e READ DATA OUT =9e
+# UVM_INFO ApbScoreboard.sv(39) @ 315: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 17 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# --------------------------------------------
+# Name                 Type        Size  Value
+# --------------------------------------------
+# ip_mon_h             ApbSeqItem  -     @685 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
+#   transfer           integral    1     'h1  
+#   READ_WRITE         integral    1     'h1  
+#   apb_read_data_out  integral    8     'h9d 
+# --------------------------------------------
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
+# THE RESET IS 1
+# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =9d READ DATA OUT =9d
 # -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 305: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9e  ACTUAL RDATA =9e |EXPECTED  READ ADDR = 6 ACTUAL READ ADDR =6
+# UVM_INFO ApbScoreboard.sv(103) @ 315: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9d  ACTUAL RDATA =9d |EXPECTED  READ ADDR = 7 ACTUAL READ ADDR =7
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 315: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 16 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(39) @ 325: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 17 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 325: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 17 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
-# --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
-# THE RESET IS 1
-# ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 325: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 6 | WDATA = 9e | RDATA = 9e | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(46) @ 335: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 7 | WDATA = 9d | RDATA = 9d | RPADDR = 7
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
 # ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =9e READ DATA OUT =9e
-# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 325: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9e  ACTUAL RDATA =9e |EXPECTED  READ ADDR = 6 ACTUAL READ ADDR =6
-# READ_ADDRESS_VALIDITY: ASSERTION PASS
-# TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 335: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 17 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(39) @ 335: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 18 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
+# FOR COMPARING : WRITE DATA =9d READ DATA OUT =9d
+# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
+# UVM_INFO ApbScoreboard.sv(103) @ 335: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9d  ACTUAL RDATA =9d |EXPECTED  READ ADDR = 7 ACTUAL READ ADDR =7
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
-# UVM_INFO ApbScoreboard.sv(39) @ 345: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 18 | TRANSFER = 1 | RW = 1 | WDATA = 9e | WPADDR = 6 | RPADDR = 6
+# UVM_INFO ApbScoreboard.sv(39) @ 345: uvm_test_top.env_h.scb_h [SB] EXPECTED TRANSACTION: size = 18 | TRANSFER = 1 | RW = 1 | WDATA = 9d | WPADDR = 7 | RPADDR = 7
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
 # --------------------------------------------
 # Name                 Type        Size  Value
 # --------------------------------------------
 # ip_mon_h             ApbSeqItem  -     @685 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
+#   apb_write_paddr    integral    9     'h7  
+#   apb_read_paddr     integral    9     'h7  
+#   apb_write_data     integral    8     'h9d 
 #   transfer           integral    1     'h1  
 #   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
+#   apb_read_data_out  integral    8     'h9d 
 # --------------------------------------------
-# WRITE ADDRESS = 000000110  READ ADDRESS =000000110 || WRITE DATA =9e
+# WRITE ADDRESS = 000000111  READ ADDRESS =000000111 || WRITE DATA =9d
 # THE RESET IS 1
 # ----------------------------------------------INPUT MONITOR-------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(46) @ 345: uvm_test_top.env_h.scb_h [SB] ACTUAL TRANSACTION: size = 1 | TRANSFER = 1 | RW = 1 | WPADDR = 6 | WDATA = 9e | RDATA = 9e | RPADDR = 6
-# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# --------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# op_mon_h             ApbSeqItem  -     @710 
-#   apb_write_paddr    integral    9     'h6  
-#   apb_read_paddr     integral    9     'h6  
-#   apb_write_data     integral    8     'h9e 
-#   transfer           integral    1     'h1  
-#   READ_WRITE         integral    1     'h1  
-#   apb_read_data_out  integral    8     'h9e 
-# --------------------------------------------
-# ----------------------------------------------OUTPUT MONITOR-------------------------------------------------------
-# FOR COMPARING : WRITE DATA =9e READ DATA OUT =9e
-# -------------------------------------------------------------------------READ PASS---------------------------------------------------------------------
-# UVM_INFO ApbScoreboard.sv(103) @ 345: uvm_test_top.env_h.scb_h [COMPARE] READ PASS | EXPECTED RDATA = 9e  ACTUAL RDATA =9e |EXPECTED  READ ADDR = 6 ACTUAL READ ADDR =6
 # READ_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 355: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
@@ -1465,30 +1218,30 @@ run -all
 #  Input coverage is 85.714286 
 #  output coverage is 100.000000
 # UVM_INFO ApbScoreboard.sv(118) @ 355: uvm_test_top.env_h.scb_h [SCOREBOARD] -----------------------------
-# UVM_INFO ApbScoreboard.sv(119) @ 355: uvm_test_top.env_h.scb_h [SCOREBOARD] PASSED: 16
+# UVM_INFO ApbScoreboard.sv(119) @ 355: uvm_test_top.env_h.scb_h [SCOREBOARD] PASSED: 15
 # UVM_INFO ApbScoreboard.sv(120) @ 355: uvm_test_top.env_h.scb_h [SCOREBOARD] FAILED: 0
 # UVM_INFO ApbScoreboard.sv(121) @ 355: uvm_test_top.env_h.scb_h [SCOREBOARD] -----------------------------
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   79
+# UVM_INFO :   77
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [COMPARE]    16
+# [COMPARE]    15
 # [COVERAGE]     1
 # [Questa UVM]     2
 # [RNTST]     1
-# [SB]    53
+# [SB]    52
 # [SCOREBOARD]     4
 # [TEST_DONE]     1
 # [UVMTOP]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 355 ns  Iteration: 55  Instance: /top
+#    Time: 355 ns  Iteration: 56  Instance: /top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 quit
-# End time: 12:36:54 on May 27,2025, Elapsed time: 0:00:54
+# End time: 12:57:30 on May 27,2025, Elapsed time: 0:00:33
 # Errors: 0, Warnings: 3

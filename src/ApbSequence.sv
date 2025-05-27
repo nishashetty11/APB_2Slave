@@ -224,7 +224,7 @@ class ApbWriteReadSlave1Sequence extends ApbSequence;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 0;
       })
-      `uvm_send(txn)
+     // `uvm_send(txn)
 
  
       addr = txn.apb_write_paddr;
@@ -237,7 +237,7 @@ class ApbWriteReadSlave1Sequence extends ApbSequence;
         apb_read_paddr == addr;
       })
 
-     `uvm_send(txn)
+   //  `uvm_send(txn)
     end
   endtask
 endclass
@@ -259,7 +259,7 @@ class ApbWriteReadSlave2Sequence extends ApbSequence;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })
-      `uvm_send(txn)
+   //   `uvm_send(txn)
       addr = txn.apb_write_paddr;
 
 
@@ -269,7 +269,7 @@ class ApbWriteReadSlave2Sequence extends ApbSequence;
         READ_WRITE == 1;                // 1 = READ
         apb_read_paddr == addr;
       })
-      `uvm_send(txn)
+    //  `uvm_send(txn)
     end
   endtask
 endclass
@@ -291,14 +291,14 @@ virtual task body();
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 0;
       })
-      `uvm_send(txn)
+    //  `uvm_send(txn)
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 0;
       })
  
-    `uvm_send(txn)
+//    `uvm_send(txn)
       addr = txn.apb_write_paddr;
 
       // READ transaction
@@ -307,7 +307,7 @@ virtual task body();
         READ_WRITE == 1;                // 1 = READ
         apb_read_paddr == addr;
       })
-      `uvm_send(txn)
+  //    `uvm_send(txn)
     end
   endtask
 endclass
@@ -330,14 +330,14 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })
-      `uvm_send(txn)
+    //  `uvm_send(txn)
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })
  
-      `uvm_send(txn)
+     // `uvm_send(txn)
       addr = txn.apb_write_paddr;
 
       // READ transaction
@@ -346,7 +346,7 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
         READ_WRITE == 1;                // 1 = READ
         apb_read_paddr == addr;
       })
-      `uvm_send(txn)
+     // `uvm_send(txn)
     end
   endtask
 endclass
