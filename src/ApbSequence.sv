@@ -335,19 +335,12 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
   endfunction
 virtual task body();
     repeat (4) begin
-      // WRITE transaction
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })
-    //  `uvm_send(txn)
       `uvm_do_with(txn, {
-        transfer == 1;
-        READ_WRITE == 0;                // 0 = WRITE
-        apb_write_paddr[8] == 1;
-      })
- `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
@@ -356,11 +349,7 @@ virtual task body();
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
-      })
- 
-*/
-
-//    `uvm_send(txn)
+      })*/
       addr = txn.apb_write_paddr;
 
       // READ transaction

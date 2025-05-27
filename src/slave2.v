@@ -5,7 +5,7 @@
 module slave2(
          input PCLK,PRESETn,
          input PSEL,PENABLE,PWRITE,
-         input [8:0]PADDR,
+         input [7:0]PADDR,
          input [7:0]PWDATA,
         output [7:0]PRDATA2,
         output reg PREADY );
