@@ -10,7 +10,7 @@ module slave2(
         output [7:0]PRDATA2,
         output reg PREADY );
     
-     reg [8:0]reg_addr;
+     reg [7:0]reg_addr;
 
      reg [7:0] mem2 [0:255];
 

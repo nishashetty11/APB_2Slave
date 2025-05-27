@@ -297,7 +297,19 @@ virtual task body();
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 0;
       })
+ `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 0;
+      })
+/* `uvm_do_with(txn, {
+        transfer == 1;
+        READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr[8] == 1;
+      })
  
+*/
+
 //    `uvm_send(txn)
       addr = txn.apb_write_paddr;
 
@@ -322,7 +334,7 @@ class ApbContinuousWRSlave2Sequence extends ApbSequence;
     super.new(name);
   endfunction
 virtual task body();
-    repeat (2) begin
+    repeat (4) begin
       // WRITE transaction
       `uvm_do_with(txn, {
         transfer == 1;
