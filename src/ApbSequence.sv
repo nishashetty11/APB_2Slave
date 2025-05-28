@@ -291,10 +291,13 @@ virtual task body();
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 0;
       })
+   
+      addr = txn.apb_write_paddr;
     //  `uvm_send(txn)
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr == addr;
         apb_write_paddr[8] == 0;
       })
  `uvm_do_with(txn, {
@@ -311,7 +314,6 @@ virtual task body();
 */
 
 //    `uvm_send(txn)
-      addr = txn.apb_write_paddr;
 
       // READ transaction
       `uvm_do_with(txn, {
@@ -340,9 +342,12 @@ virtual task body();
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })
+            
+      addr = txn.apb_write_paddr;
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
+        apb_write_paddr == addr;
         apb_write_paddr[8] == 1;
       })
 /* `uvm_do_with(txn, {
@@ -350,13 +355,12 @@ virtual task body();
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 1;
       })*/
-      addr = txn.apb_write_paddr;
 
       // READ transaction
       `uvm_do_with(txn, {
         transfer == 1;
-        READ_WRITE == 1;                // 1 = READ
-        apb_read_paddr == addr;
+        READ_WRITE == 1;                // 1 = READ 
+       apb_read_paddr == addr;
       })
   //    `uvm_send(txn)
     end
