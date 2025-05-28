@@ -293,28 +293,21 @@ virtual task body();
       })
    
       addr = txn.apb_write_paddr;
-    //  `uvm_send(txn)
+ 
+   //  `uvm_send(txn)
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr == addr;
         apb_write_paddr[8] == 0;
       })
- `uvm_do_with(txn, {
+
+/* `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr[8] == 0;
       })
-/* `uvm_do_with(txn, {
-        transfer == 1;
-        READ_WRITE == 0;                // 0 = WRITE
-        apb_write_paddr[8] == 1;
-      })
- 
 */
-
-//    `uvm_send(txn)
-
       // READ transaction
       `uvm_do_with(txn, {
         transfer == 1;
@@ -344,12 +337,14 @@ virtual task body();
       })
             
       addr = txn.apb_write_paddr;
+
       `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
         apb_write_paddr == addr;
         apb_write_paddr[8] == 1;
       })
+
 /* `uvm_do_with(txn, {
         transfer == 1;
         READ_WRITE == 0;                // 0 = WRITE
@@ -382,7 +377,24 @@ class ApbTransferValiditySequence extends ApbSequence;
   virtual task body();
    */
 
+class ApbTransferValiditySequence extends ApbSequence;
 
+  `uvm_object_utils(ApbTransferValiditySequence)
+
+  function new(string name = "ApbTransferValiditySequence");
+   super.new(name);
+  endfunction
+  
+  ApbSeqItem txn;
+
+
+  virtual task body();
+    txn = ApbSeqItem::type_id::create("txn");
+          
+    `uvm_do_with(txn, {transfer == 0;})
+    
+  endtask
+endclass
 
 
 

@@ -253,6 +253,33 @@ phase.phase_done.set_drain_time(this,100);
 
 endclass
 
+class ApbTransferValidityTest extends ApbTest;
+  `uvm_component_utils(ApbTransferValidityTest)
+
+  ApbTransferValiditySequence seq_h;
+
+  function new(string name = "ApbTransferValidityTest", uvm_component parent = null);
+    super.new(name,parent);
+  endfunction
+
+  virtual function void build_phase(uvm_phase phase);
+     super.build_phase(phase);
+  endfunction :build_phase
+
+  task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    phase.raise_objection(this);
+    seq_h = ApbTransferValiditySequence::type_id::create("seq_h");
+    
+    seq_h.start(env_h.act_h.seqr_h); 
+
+    phase.drop_objection(this);
+  endtask:run_phase
+  
+endclass
+
+
+
 
 class ApbRegressionTest extends ApbTest;
   `uvm_component_utils(ApbRegressionTest)
