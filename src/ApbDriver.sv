@@ -19,7 +19,7 @@ class ApbDriver extends uvm_driver#(ApbSeqItem);
 
   
   task run_phase(uvm_phase phase);
-   repeat(2)  @(vif.drv_cb);
+//  repeat(2)  @(vif.drv_cb);
     forever begin
       seq_item_port.get_next_item(txn); // Get transaction from sequence
       drive(); // Call drive task to apply txn to interface
@@ -28,7 +28,8 @@ class ApbDriver extends uvm_driver#(ApbSeqItem);
   endtask: run_phase
 
 virtual task drive();
- repeat(1)  @(vif.drv_cb);
+//@(vif.drv_cb);
+
  @(vif.drv_cb) begin
  if (!vif.presetn)
       begin
@@ -41,8 +42,8 @@ virtual task drive();
      end
    else
      begin
- 
-  //    @(vif.drv_cb);
+repeat(4)
+    @(vif.drv_cb);
            vif.drv_cb.transfer <= txn.transfer;
            vif.drv_cb.READ_WRITE <= txn.READ_WRITE;
             if(txn.transfer) begin
@@ -52,9 +53,17 @@ virtual task drive();
      begin
            vif.drv_cb.apb_write_paddr <= txn.apb_write_paddr;
            vif.drv_cb.apb_write_data <= txn.apb_write_data;
+        
+    end
+   end
+    else begin
+        vif.READ_WRITE <='b0;
+        vif.apb_write_paddr <='b0;
+        vif.apb_write_data <= 'b0;
+        vif.apb_read_paddr <= 'b0;
+ 
+  end
 end
-end
-end 
       
         $display("---------------------------------DRIVER-------------------");
           txn.print();

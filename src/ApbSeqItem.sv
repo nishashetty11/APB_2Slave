@@ -23,14 +23,14 @@ function new(string name = "ApbSeqItem");
   super.new(name); // Calls parent class constructor
 endfunction : new
 
-constraint c1_transfer { if(transfer ==0)
-                 {READ_WRITE==0;
-                 apb_write_paddr==0;
-                 apb_write_data==0;
-                 apb_read_paddr==0;
-                 apb_read_data_out==0;
+/*constraint c1_transfer { if(transfer ==0)
+                 {soft READ_WRITE==0;
+                 soft apb_write_paddr==0;
+                 soft apb_write_data==0;
+                 soft apb_read_paddr==0;
+                 soft apb_read_data_out==0;
                 }}
-
+*/
   /*constraint c2_apb_slave_select {
    soft apb_write_paddr[8] dist {0:=1,1:=1};
   }*/

@@ -55,20 +55,32 @@ endproperty
 read_address_validity: assert property (checkReadAddressValidity)
        $display("READ_ADDRESS_VALIDITY: ASSERTION PASS");
   else $error("READ_ADDRESS_VALIDITY: ASSERTION FAIL");
-
 //============================================================
-// 3. WRITE ADDRESS STABILITY
-// Ensures that during a write transfer, the address remains stable
+// 3. WRITE DATA VALIDITY
+// Ensures that during a write transfer, write data is not X or Z
 //============================================================
-/*property checkWriteAddressStability;
+property checkWriteDataValidity;
   @(posedge pclk) disable iff (!presetn)
-    transfer && !READ_WRITE |=> $stable(apb_write_paddr);
+    transfer && !READ_WRITE |-> !$isunknown(apb_write_data);
 endproperty
 
-write_address_stability: assert property (checkWriteAddressStability)
-       $display("WRITE_ADDRESS_STABILITY: ASSERTION PASS");
-  else $error("WRITE_ADDRESS_STABILITY: ASSERTION FAIL");
-*/
+write_data_validity: assert property (checkWriteDataValidity)
+        $display("WRITE_DATA_VALIDITY: ASSERTION PASS");
+  else $error("WRITE_DATA_VALIDITY: ASSERTION PASS");
+//============================================================
+// 4. READ DATA VALIDITY
+// Ensures that during a read transfer, read data is not X or Z
+//============================================================
+property checkReadDataValidity;
+  @(posedge pclk) disable iff (!presetn)
+    transfer && READ_WRITE |=> !$isunknown(apb_read_data_out);
+endproperty
+
+read_data_validity: assert property (checkReadDataValidity)
+        $display("READ_DATA_VALIDITY: ASSERTION PASS");
+  else $error("READ_DATA_VALIDITY: ASSERTION FAIL", $time);
+
+
 //============================================================
 // 4. TRANSFER VALIDITY (Dynamic)
 // Ensures that during any transfer:

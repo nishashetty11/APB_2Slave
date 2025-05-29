@@ -20,7 +20,8 @@ function void build_phase(uvm_phase phase);
 endfunction : build_phase
 
 
-virtual task run_phase(uvm_phase phase); 
+virtual task run_phase(uvm_phase phase);
+//@(vif.mon_cb); 
  forever begin
    @(vif.mon_cb) begin
       ip_mon_h.transfer = vif.transfer;
