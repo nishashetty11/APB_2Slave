@@ -91,7 +91,7 @@ data:[
 }
 }
 },
-z14:{prod:'Questa',reporttype:'in',scopes:[{s:'11',b:'1',val:'top'},{link:'z.htm?f=1&s=14',val:'dut'}],du:{val:'work.APB_Protocol',link:'z.htm?f=1&s=14'},lang:'Verilog',src:{z:'ApbTop.sv'},summaryTables:{
+z14:{prod:'Questa',reporttype:'in',scopes:[{s:'11',b:'1',val:'top'},{link:'z.htm?f=1&s=14',val:'dut'}],du:{val:'work.APB_Protocol',link:'z.htm?f=1&s=14'},lang:'Verilog',src:{z:'../src/ApbTop.sv'},summaryTables:{
 headers:['Statement', 'Branch', 'FEC Expression', 'FEC Condition', 'Toggle', 'FSM State', 'FSM Trans'],
 instances:[{parent:'0',ln:'TOTAL',covs:[{class:'bgYellow', val:'77.58'},{class:'bgYellow', val:'89.06'},{class:'bgYellow', val:'87.09'},{class:'bgYellow', val:'57.14'},{class:'bgRed', val:'47.82'},{class:'bgGreen', val:'94.40'},{class:'bgGreen', val:'100.00'},{class:'bgYellow', val:'80.00'}]},
 {parent:'0',ln:'dut',covs:[{class:'bgGreen', val:'99.71'},{class:'bgGreen', val:'100.00'},{class:'bgGreen', val:'100.00'},{class:'bgGreen', val:'100.00'},{class:'even', val:'--'},{class:'bgGreen', val:'98.85'},{class:'even', val:'--'},{class:'even', val:'--'}]},
@@ -125,7 +125,7 @@ data:[
 }
 }
 },
-z352:{prod:'Questa',reporttype:'in',scopes:[{s:'11',b:'1',val:'top'},{link:'z.htm?f=1&s=352',val:'intf'}],du:{val:'work.ApbInterface',link:'z.htm?f=1&s=352'},lang:'SystemVerilog',src:{z:'ApbTop.sv'},summaryTables:{loctable:{
+z352:{prod:'Questa',reporttype:'in',scopes:[{s:'11',b:'1',val:'top'},{link:'z.htm?f=1&s=352',val:'intf'}],du:{val:'work.ApbInterface',link:'z.htm?f=1&s=352'},lang:'SystemVerilog',src:{z:'../src/ApbTop.sv'},summaryTables:{loctable:{
 headers:['Coverage Type', 'Bins', 'Hits', 'Misses', 'Weight', '% Hit', 'Coverage'],
 totalhits:{class:'odd_r', val:'97.64%'},avgw:{class:'bgGreen', val:'99.34%'},
 data:[
@@ -137,7 +137,7 @@ data:[
 }
 }
 },
-z4:{prod:'Questa',reporttype:'du',duname:'work.top',lang:'SystemVerilog',src:{z:'ApbTop.sv'},summaryTables:{loctable:{
+z4:{prod:'Questa',reporttype:'du',duname:'work.top',lang:'SystemVerilog',src:{z:'../src/ApbTop.sv'},summaryTables:{loctable:{
 headers:['Coverage Type', 'Bins', 'Hits', 'Misses', 'Weight', '% Hit', 'Coverage'],
 totalhits:{class:'odd_r', val:'91.66%'},avgw:{class:'bgYellow', val:'87.50%'},
 data:[
@@ -147,7 +147,7 @@ data:[
 }
 }
 },
-z11:{prod:'Questa',reporttype:'in',scopes:[{link:'z.htm?f=1&s=11',val:'top'}],du:{val:'work.top',link:'z.htm?f=1&s=11'},lang:'SystemVerilog',src:{z:'ApbTop.sv'},summaryTables:{
+z11:{prod:'Questa',reporttype:'in',scopes:[{link:'z.htm?f=1&s=11',val:'top'}],du:{val:'work.top',link:'z.htm?f=1&s=11'},lang:'SystemVerilog',src:{z:'../src/ApbTop.sv'},summaryTables:{
 headers:['Statement', 'Branch', 'FEC Expression', 'FEC Condition', 'Toggle', 'FSM State', 'FSM Trans', 'Assertion'],
 instances:[{parent:'0',ln:'TOTAL',covs:[{class:'bgYellow', val:'81.11'},{class:'bgGreen', val:'90.54'},{class:'bgYellow', val:'87.50'},{class:'bgYellow', val:'57.14'},{class:'bgRed', val:'47.82'},{class:'bgGreen', val:'94.80'},{class:'bgGreen', val:'100.00'},{class:'bgYellow', val:'80.00'},{class:'bgGreen', val:'100.00'}]},
 {parent:'0',ln:'top',covs:[{class:'bgYellow', val:'87.50'},{class:'bgGreen', val:'100.00'},{class:'even', val:'--'},{class:'even', val:'--'},{class:'even', val:'--'},{class:'bgYellow', val:'75.00'},{class:'even', val:'--'},{class:'even', val:'--'},{class:'even', val:'--'}]},
