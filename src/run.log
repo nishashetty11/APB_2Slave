@@ -1,9 +1,6 @@
 # vsim -vopt work.top "+UVM_VERBOSITY=UVM_MEDIUM" -voptargs="+acc=npr" -assertdebug -l run.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; run -all; exit" 
-# Start time: 12:32:35 on May 29,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "master_bridge(fast)".
-# ** Warning: ../src/ApbTop.sv(12): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 9, found 8.
-# ** Warning: ../src/ApbTop.sv(12): (vopt-2718) [TFMPC] - Missing connection for port 'PSLVERR'.
+# Start time: 15:02:18 on Jun 04,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -10848,9 +10845,6 @@
 # WRITE_ADDRESS_VALIDITY: ASSERTION PASS
 # TRANSFER_VALIDITY: ASSERTION PASS
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 3815: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO ApbCoverage.sv(90) @ 3815: uvm_test_top.env_h.cov_h [COVERAGE] 
-#  Input coverage is 100.000000 
-#  output coverage is 100.000000
 # UVM_INFO ApbScoreboard.sv(118) @ 3815: uvm_test_top.env_h.scb_h [SCOREBOARD] -----------------------------
 # UVM_INFO ApbScoreboard.sv(119) @ 3815: uvm_test_top.env_h.scb_h [SCOREBOARD] PASSED: 125
 # UVM_INFO ApbScoreboard.sv(120) @ 3815: uvm_test_top.env_h.scb_h [SCOREBOARD] FAILED: 0
@@ -10859,13 +10853,12 @@
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :  642
+# UVM_INFO :  641
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
 # [COMPARE]   125
-# [COVERAGE]     1
 # [Questa UVM]     2
 # [RNTST]     1
 # [SB]   508
@@ -10874,5 +10867,5 @@
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 3815 ns  Iteration: 55  Instance: /top
 # Saving coverage database on exit...
-# End time: 12:32:39 on May 29,2025, Elapsed time: 0:00:04
-# Errors: 0, Warnings: 2
+# End time: 15:02:20 on Jun 04,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0

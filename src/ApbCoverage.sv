@@ -87,7 +87,7 @@ class ApbCoverage extends uvm_subscriber #(ApbSeqItem);
           
           ip_cov_val = fun_cov_in.get_coverage();
           op_cov_val = fun_cov_op.get_coverage();
-        `uvm_info("COVERAGE",$sformatf("\n Input coverage is %f \n output coverage is %f",ip_cov_val,op_cov_val),UVM_LOW);
+        //`uvm_info("COVERAGE",$sformatf("\n Input coverage is %f \n output coverage is %f",ip_cov_val,op_cov_val),UVM_LOW);
         endfunction
     
 
