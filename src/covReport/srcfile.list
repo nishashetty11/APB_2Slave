@@ -1,4 +1,3 @@
-../src/ApbTop.sv
 ApbActiveAgent.sv
 ApbCoverage.sv
 ApbDriver.sv
@@ -13,6 +12,7 @@ ApbSeqItem.sv
 ApbSequence.sv
 ApbSequencer.sv
 ApbTest.sv
+ApbTop.sv
 apbtop.v
 master.v
 slave1.v

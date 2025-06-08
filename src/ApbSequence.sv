@@ -38,7 +38,7 @@ class ApbWriteSlave1Sequence extends ApbSequence;
   virtual task body();
     txn = ApbSeqItem::type_id::create("txn");
 
-    repeat(2) begin
+    repeat(10) begin
       `uvm_do_with(txn, {transfer == 1; READ_WRITE == 0; apb_write_paddr[8] == 0;})
     //  `uvm_send(txn);
       $display("WRITE ADDRESS == %b", txn.apb_write_paddr);

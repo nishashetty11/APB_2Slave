@@ -6,7 +6,7 @@ module top;
  initial begin
      pclk=0;
      presetn =0;
-     #20;
+     #10;
      presetn=1;
     end
  APB_Protocol dut (

@@ -77,13 +77,13 @@ c6:[{dummy:0}
 ,{anchor:'cvg151',cr:'m',items:[{s:'3',x:'FC',z:'(((apb_read_paddr === x) && READ_WRITE) && ((state == 2) || (state == 4)))',c:'R',p:'0.00',d:'0',F:'1'}
 ,{}
 ,{z:'(apb_read_paddr === x)',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
-,{z:'READ_WRITE',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'READ_WRITE',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
 ,{z:'(state == 2)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
 ,{z:'(state == 4)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
 ,{}
 ,{n:'1',z:'(apb_read_paddr === x)_0',h1:'1',t:'c',c1:'-'}
 ,{n:'2',z:'(apb_read_paddr === x)_1',h1:'0',t:'c',c1:'(((state == 2) || (state == 4)) && READ_WRITE)'}
-,{n:'3',z:'READ_WRITE_0',h1:'0',t:'c',c1:'(apb_read_paddr === x)'}
+,{n:'3',z:'READ_WRITE_0',h1:'1',t:'c',c1:'(apb_read_paddr === x)'}
 ,{n:'4',z:'READ_WRITE_1',h1:'0',t:'c',c1:'(((state == 2) || (state == 4)) && (apb_read_paddr === x))'}
 ,{n:'5',z:'(state == 2)_0',h1:'0',t:'c',c1:'(((apb_read_paddr === x) && READ_WRITE) && ~(state == 4))'}
 ,{n:'6',z:'(state == 2)_1',h1:'0',t:'c',c1:'((apb_read_paddr === x) && READ_WRITE)'}
@@ -195,13 +195,13 @@ c116:[{dummy:0}
 ,{anchor:'cvg151',cr:'m',items:[{s:'3',x:'FC',z:'(((apb_read_paddr === x) && READ_WRITE) && ((state == 2) || (state == 4)))',c:'R',p:'0.00',d:'0',F:'1'}
 ,{}
 ,{z:'(apb_read_paddr === x)',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
-,{z:'READ_WRITE',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'READ_WRITE',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
 ,{z:'(state == 2)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
 ,{z:'(state == 4)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
 ,{}
 ,{n:'1',z:'(apb_read_paddr === x)_0',h1:'1',t:'c',c1:'-'}
 ,{n:'2',z:'(apb_read_paddr === x)_1',h1:'0',t:'c',c1:'(((state == 2) || (state == 4)) && READ_WRITE)'}
-,{n:'3',z:'READ_WRITE_0',h1:'0',t:'c',c1:'(apb_read_paddr === x)'}
+,{n:'3',z:'READ_WRITE_0',h1:'1',t:'c',c1:'(apb_read_paddr === x)'}
 ,{n:'4',z:'READ_WRITE_1',h1:'0',t:'c',c1:'(((state == 2) || (state == 4)) && (apb_read_paddr === x))'}
 ,{n:'5',z:'(state == 2)_0',h1:'0',t:'c',c1:'(((apb_read_paddr === x) && READ_WRITE) && ~(state == 4))'}
 ,{n:'6',z:'(state == 2)_1',h1:'0',t:'c',c1:'((apb_read_paddr === x) && READ_WRITE)'}
